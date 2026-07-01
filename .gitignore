@@ -1,0 +1,14 @@
+# Ignore raw Figma exports at the figma root, but keep the design folder images
+assets/figma/*
+!assets/figma/design/
+!assets/figma/design/**
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Node / dependencies
+node_modules/
+
+# Editor settings
+.vscode/
