@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -80,13 +82,15 @@ a {
 }
 
 .dept-title {
+  font-family: 'Montserrat', sans-serif;
   font-size: var(--logo-title-size);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.05;
   max-width: 560px;
 }
 
 .dept-sub {
+  font-family: 'Helvetica', 'Arial', sans-serif;
   margin-top: 2px;
   font-size: var(--logo-sub-size);
   line-height: 1.2;
@@ -309,22 +313,25 @@ a {
 }
 
 h1 {
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   font-size: 76px;
-  font-weight: 500;
+  font-weight: 800;
   line-height: 1.05;
 }
 
 h2 {
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   font-size: 34px;
-  font-weight: 500;
+  font-weight: 800;
 }
 
 h3 {
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 p,
@@ -346,12 +353,13 @@ li {
 }
 
 .section-title {
+  font-family: 'Montserrat', sans-serif;
   margin: 0 0 18px;
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 34px;
-  font-weight: 500;
+  font-weight: 800;
 }
 
 .section-title::before {
@@ -578,8 +586,13 @@ li {
 }
 
 .hero-box .eyebrow-text {
+  font-family: 'Helvetica', 'Arial', sans-serif;
   font-size: 16px;
   margin-bottom: 10px;
+}
+
+.eyebrow-text {
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 .hero-box p {
@@ -1003,6 +1016,7 @@ li {
   background: var(--footer);
   border-top: 3px solid var(--line);
   padding: 34px 32px 24px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .footer-inner {
@@ -1029,20 +1043,22 @@ li {
 
 .footer-brand .college {
   font-size: 34px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.1;
 }
 
 .footer-address {
   max-width: 520px;
-  font-size: 16px;
-  line-height: 1.35;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
 }
 
 .footer-right {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  justify-self: end;
   gap: 12px;
 }
 
@@ -1060,7 +1076,8 @@ li {
 }
 
 .footer-contact {
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .social-row {
@@ -1068,7 +1085,7 @@ li {
   align-items: center;
   gap: 12px;
   margin-top: 10px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -1099,7 +1116,8 @@ li {
   max-width: 1440px;
   margin: 22px auto 0;
   text-align: center;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 @media (max-width: 1100px) {
@@ -1179,6 +1197,7 @@ li {
 
   .footer-right {
     justify-content: flex-start;
+    justify-self: start;
   }
 }
 
