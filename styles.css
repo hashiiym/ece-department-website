@@ -44,28 +44,38 @@ a {
 }
 
 :root {
-  --logo-size: clamp(56px, 8vw, 94px);
+  --logo-size: clamp(56px, 5vw, 72px);
   --logo-title-size: calc(var(--logo-size) * 0.28);
   --logo-sub-size: calc(var(--logo-size) * 0.19);
 }
 
 .logo {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: clamp(10px, 1.4vw, 14px);
 }
 
-.logo img {
-  width: var(--logo-size);
-  height: var(--logo-size);
-  object-fit: contain;
+.logo-img-wrapper {
+  position: relative;
+  min-height: var(--logo-size);
+  aspect-ratio: 1 / 1;
   flex-shrink: 0;
+}
+
+.logo-img-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .dept {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: auto;
   min-height: var(--logo-size);
 }
 
@@ -1185,11 +1195,6 @@ li {
     margin-left: -18px;
     margin-right: -18px;
     height: 240px;
-  }
-
-  .logo img {
-    width: 42px;
-    height: 56px;
   }
 
   .dept-title {
