@@ -580,6 +580,7 @@ li {
 }
 
 .hero-box {
+  height: 100%;
   background: var(--panel-soft);
   border-radius: 24px;
   padding: 24px 26px 22px;
@@ -724,14 +725,31 @@ li {
   background: #d8d8d8;
   border-radius: 28px;
   padding: 24px 26px;
-  min-height: 730px;
+  height: 730px;
+  display: flex;
+  flex-direction: column;
 }
 
-.map-shell iframe {
+.map-container {
   width: 100%;
-  max-width: 380px;
-  height: 260px;
+  flex: 1;
+  min-height: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.map-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
   border: 0;
+  display: block;
 }
 
 .profile-card {
@@ -1060,13 +1078,13 @@ li {
 .footer-brand {
   display: flex;
   align-items: center;
-  gap: 18px;
   margin-bottom: 18px;
+  gap: 18px;
 }
 
 .footer-brand img {
-  width: 82px;
-  height: 82px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
 }
 
@@ -1105,15 +1123,18 @@ li {
 }
 
 .footer-contact {
+  text-align: center;
   font-size: 15px;
   font-weight: 500;
+  margin-top: 10px;
 }
 
 .social-row {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-left: 50px;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
@@ -1278,4 +1299,19 @@ li {
   .footer-brand .college {
     font-size: 28px;
   }
+
+  /* Container for the map */
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* The actual Google Map iframe */
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 }
