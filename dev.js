@@ -33,13 +33,23 @@ http.createServer((req, res) => {
     return;
   }
 
+  // Check if file exists
   fs.stat(filePath, (statErr, stats) => {
+    let target = filePath;
+
     if (statErr) {
-      send(res, 404, "Not found");
-      return;
+      // If the file doesn't exist, try appending .html for clean URLs
+      const htmlPath = filePath + ".html";
+      if (fs.existsSync(htmlPath)) {
+        target = htmlPath;
+      } else {
+        send(res, 404, "Not found");
+        return;
+      }
+    } else if (stats.isDirectory()) {
+      target = path.join(filePath, "index.html");
     }
 
-    const target = stats.isDirectory() ? path.join(filePath, "index.html") : filePath;
     fs.readFile(target, (readErr, content) => {
       if (readErr) {
         send(res, 404, "Not found");

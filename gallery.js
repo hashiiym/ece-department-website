@@ -1,3 +1,4 @@
+
 const PROJECT_ID = "hiaonaj4";
 const DATASET = "production";
 
@@ -56,5 +57,6 @@ function openLightbox(imgUrl, caption) {
   overlay.addEventListener("click", () => overlay.remove());
   document.body.appendChild(overlay);
 }
+
 
 loadGallery();
