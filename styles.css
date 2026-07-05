@@ -1001,7 +1001,6 @@ li {
 .faculty-grid,
 .gallery-grid,
 .three-col,
-.feature-grid,
 .research-streams {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
