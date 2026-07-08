@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Preloader Start -->
+  <div id="preloader">
+    <div class="preloader-logo-wrapper">
+      <div class="water-wave" id="water-wave"></div>
+    </div>
+    <div class="progress-text" id="progress-text">0%</div>
+  </div>
+  <!-- Preloader End -->
   <header class="site-header">
     <div class="topbar">
       <div class="logo">
@@ -176,5 +184,35 @@
     </div>
         <div class="copyright">(c) 2026 - All rights reserved. Department of Electronics and Communication Engineering || Website Credits</div>
   </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let progress = 0;
+      const progressText = document.getElementById("progress-text");
+      const waterWave = document.getElementById("water-wave");
+      const preloader = document.getElementById("preloader");
+
+      // Simulate asset loading
+      const interval = setInterval(() => {
+        // Increment by random jumps for a realistic load feel
+        progress += Math.floor(Math.random() * 12) + 2; 
+        if (progress >= 100) progress = 100;
+
+        progressText.innerText = progress + "%";
+        
+        // Map 0-100% progress to the top position of the wave
+        // 120% is empty (below the logo), -20% is completely full (above the logo)
+        const wavePosition = 120 - (progress * 1.4); 
+        waterWave.style.top = wavePosition + "%";
+
+        if (progress === 100) {
+          clearInterval(interval);
+          setTimeout(() => {
+            preloader.style.opacity = "0";
+            setTimeout(() => preloader.style.display = "none", 500); // Wait for fade out
+          }, 600); // Brief pause at 100% before fading
+        }
+      }, 150);
+    });
+  </script>
 </body>
 </html>
