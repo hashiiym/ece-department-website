@@ -32,6 +32,79 @@ a {
   color: inherit;
 }
 
+/* =========================================
+   Preloader & Water Fill Animation
+   ========================================= */
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff; /* White background to match the site theme */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition: opacity 0.5s ease-out;
+}
+
+.preloader-logo-wrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  /* Use the transparent PNG as a mask */
+  mask-image: url('assets/ece-logo.png');
+  -webkit-mask-image: url('assets/ece-logo.png');
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  
+  /* Base color of the empty logo - Light Grey */
+  background-color: #e4e4e4; 
+  overflow: hidden;
+}
+
+/* The liquid element */
+.water-wave {
+  position: absolute;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  /* The color of the filled logo - Black */
+  background-color: #000000; 
+  
+  /* The magic shape that creates the wave when rotated */
+  border-radius: 38%; 
+  animation: wave-spin 4s linear infinite;
+  
+  /* Initial state (empty) */
+  top: 120%; 
+  transition: top 0.2s linear;
+}
+
+.progress-text {
+  margin-top: 24px;
+  color: #161616; /* Dark text so it's visible on the white background */
+  font-family: monospace;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+@keyframes wave-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .site-header {
   background: #fff;
   padding: 22px 28px 0;
