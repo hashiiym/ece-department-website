@@ -7,14 +7,12 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Preloader Start -->
   <div id="preloader">
     <div class="preloader-logo-wrapper">
       <div class="water-wave" id="water-wave"></div>
     </div>
     <div class="progress-text" id="progress-text">0%</div>
   </div>
-  <!-- Preloader End -->
   <header class="site-header">
     <div class="topbar">
       <div class="logo">
@@ -29,39 +27,39 @@
       <div class="langs">Malayalam | English</div>
     </div>
     <nav class="main-nav">
-  <a href="index.html" class="active">HOME</a>
-  <div class="nav-item">
-    <a class="nav-trigger" href="faculty.html">PEOPLE</a>
-    <div class="nav-dropdown">
-      <a href="faculty.html">Faculty</a>
-      <a href="staff.html">Staff</a>
-    </div>
-  </div>
-  <div class="nav-item">
-    <a class="nav-trigger" href="academics.html">ACADEMICS</a>
-    <div class="nav-dropdown">
-      <a href="academics.html">Academic Programme</a>
-      <a href="placements.html">Placements</a>
-    </div>
-  </div>
-  <div class="nav-item">
-    <a class="nav-trigger" href="achievements.html">ACHIEVEMENT</a>
-    <div class="nav-dropdown">
-      <a href="projects.html">Projects</a>
-      <a href="research.html">Research</a>
-      <a href="achievements.html">Achievements</a>
-    </div>
-  </div>
-  <div class="nav-item">
-    <a class="nav-trigger" href="events.html">EVENTS</a>
-    <div class="nav-dropdown">
-      <a href="events.html">News</a>
-      <a href="index.html#events-calendar">Events Calendar</a>
-    </div>
-  </div>
-  <a href="gallery.html">GALLERY</a>
-  <a href="reach-us.html">REACH US</a>
-</nav>
+      <a href="index.html" class="active">HOME</a>
+      <div class="nav-item">
+        <a class="nav-trigger" href="faculty.html">PEOPLE</a>
+        <div class="nav-dropdown">
+          <a href="faculty.html">Faculty</a>
+          <a href="staff.html">Staff</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-trigger" href="academics.html">ACADEMICS</a>
+        <div class="nav-dropdown">
+          <a href="academics.html">Academic Programme</a>
+          <a href="placements.html">Placements</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-trigger" href="achievements.html">ACHIEVEMENT</a>
+        <div class="nav-dropdown">
+          <a href="projects.html">Projects</a>
+          <a href="research.html">Research</a>
+          <a href="achievements.html">Achievements</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-trigger" href="events.html">EVENTS</a>
+        <div class="nav-dropdown">
+          <a href="events.html">News</a>
+          <a href="index.html#events-calendar">Events Calendar</a>
+        </div>
+      </div>
+      <a href="gallery.html">GALLERY</a>
+      <a href="reach-us.html">REACH US</a>
+    </nav>
   </header>
 
   <main class="page">
@@ -182,30 +180,43 @@
         </div>
       </div>
     </div>
-        <div class="copyright">(c) 2026 - All rights reserved. Department of Electronics and Communication Engineering || Website Credits</div>
+    <div class="copyright">(c) 2026 - All rights reserved. Department of Electronics and Communication Engineering || Website Credits</div>
   </footer>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      let progress = 0;
       const progressText = document.getElementById("progress-text");
       const waterWave = document.getElementById("water-wave");
       const preloader = document.getElementById("preloader");
 
+      // Check if preloader has already been shown in this session
+      if (sessionStorage.getItem("ecePreloaderShown") === "true") {
+        preloader.style.opacity = "0";
+        preloader.style.display = "none";
+        return;
+      }
+
+      let progress = 0;
+
       // Simulate asset loading
       const interval = setInterval(() => {
         // Increment by random jumps for a realistic load feel
-        progress += Math.floor(Math.random() * 12) + 2; 
+        progress += Math.floor(Math.random() * 12) + 2;
         if (progress >= 100) progress = 100;
 
         progressText.innerText = progress + "%";
-        
+
         // Map 0-100% progress to the top position of the wave
         // 120% is empty (below the logo), -20% is completely full (above the logo)
-        const wavePosition = 120 - (progress * 1.4); 
+        const wavePosition = 120 - (progress * 1.4);
         waterWave.style.top = wavePosition + "%";
 
         if (progress === 100) {
           clearInterval(interval);
+          
+          // Save to session storage so it doesn't show again
+          sessionStorage.setItem("ecePreloaderShown", "true");
+          
           setTimeout(() => {
             preloader.style.opacity = "0";
             setTimeout(() => preloader.style.display = "none", 500); // Wait for fade out
