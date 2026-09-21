@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Department of Electronics and Communication Engineering</title>
-  <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/favcon.png">
+<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 </head>
 <body>
   <div id="preloader">
@@ -106,51 +109,37 @@
 
       <section>
         <h2 class="section-title">News</h2>
-        <div class="feature-news">
-          <div class="date-badge">
-            <strong>XX</strong>
-            <span>&lt;month&gt;</span>
-            <span>&lt;year&gt;</span>
+        <!-- Component A: News Slider -->
+        <section id="news-slider-section" class="news-slider-container">
+          <div id="slider-date-badge" class="slider-date">
+            <!-- Date injected by JS -->
           </div>
-          <div class="featured-card">
-            <div class="image-placeholder">&lt;Photo of event&gt;</div>
-            <div class="caption">this will be for the &lt;title of event&gt;</div>
+          <div class="slider-center">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper" id="swiper-wrapper">
+                <!-- Slides injected by JS -->
+              </div>
+            </div>
           </div>
-          <div class="stack-arrows" aria-hidden="true">
-            <div class="circle-arrow">^</div>
-            <div class="circle-arrow">˅</div>
+          <div class="slider-nav">
+            <button id="slider-prev" aria-label="Previous slide">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+            </button>
+            <button id="slider-next" aria-label="Next slide">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
           </div>
-        </div>
+        </section>
       </section>
 
       <section id="events-calendar">
-        <h2 class="section-title">Events Calender</h2>
-        <div class="calendar-list">
-          <div class="calendar-row">
-            <div class="date-badge">
-              <strong>XX</strong>
-              <span>&lt;month&gt;</span>
-              <span>&lt;year&gt;</span>
-            </div>
-            <div class="calendar-item"></div>
-            <div class="stack-arrows" aria-hidden="true">
-              <div class="circle-arrow">^</div>
-              <div class="circle-arrow">˅</div>
-            </div>
+        <h2 class="section-title">Events Calendar</h2>
+        <!-- Component B: Events Calendar Accordion -->
+        <section id="events-calendar-section">
+          <div class="accordion-list" id="accordion-list">
+            <!-- Accordion rows injected by JS -->
           </div>
-          <div class="calendar-row">
-            <div class="date-badge">
-              <strong>XX</strong>
-              <span>&lt;month&gt;</span>
-              <span>&lt;year&gt;</span>
-            </div>
-            <div class="calendar-item"></div>
-            <div class="stack-arrows" aria-hidden="true">
-              <div class="circle-arrow">^</div>
-              <div class="circle-arrow">˅</div>
-            </div>
-          </div>
-        </div>
+        </section>
       </section>
     </section>
   </main>
@@ -227,5 +216,7 @@
       }, 150);
     });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/eventsManager.js"></script>
 </body>
 </html>

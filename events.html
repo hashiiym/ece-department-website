@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Events - Department ECE</title>
-  <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/favcon.png">
+<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -59,87 +62,39 @@
   <main class="page">
     <h1 class="page-title">News</h1>
 
-    <section class="news-grid">
-      <article class="news-card wide">
-        <div class="date-badge">
-          <strong>15</strong>
-          <span>Oct</span>
-          <span>2024</span>
-        </div>
-        <div class="news-content">
-          <h3>Aparna V Shenoy of S3 ECE was selected for Interzone Volleyball Team</h3>
-          <div class="news-thumb" style="background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; min-height: 200px;">
-            <span style="color: #6b7280; font-weight: 500;">Event Image</span>
+    <!-- Component A: News Slider -->
+    <section id="news-slider-section" class="news-slider-container">
+      <div id="slider-date-badge" class="slider-date">
+        <!-- Date injected by JS -->
+      </div>
+      <div class="slider-center">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper" id="swiper-wrapper">
+            <!-- Slides injected by JS -->
           </div>
         </div>
-      </article>
-
-      <article class="news-card">
-        <div class="date-badge">
-          <strong>22</strong>
-          <span>Sep</span>
-          <span>2024</span>
-        </div>
-        <div class="news-content">
-          <h3>Annual Tech Symposium</h3>
-          <p>Join us for the annual tech symposium featuring guest lectures from industry experts and project showcases from our senior students.</p>
-          <div class="news-thumb" style="background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; min-height: 200px;">
-            <span style="color: #6b7280; font-weight: 500;">Event Image</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="news-card wide">
-        <div class="date-badge">
-          <strong>10</strong>
-          <span>Sep</span>
-          <span>2024</span>
-        </div>
-        <div class="news-content">
-          <h3>Workshop on Embedded Systems</h3>
-          <p>A hands-on workshop covering the fundamentals of microcontrollers, RTOS, and modern embedded design workflows.</p>
-          <div class="news-thumb" style="background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; min-height: 200px;">
-            <span style="color: #6b7280; font-weight: 500;">Event Image</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="news-card">
-        <div class="date-badge">
-          <strong>28</strong>
-          <span>Aug</span>
-          <span>2024</span>
-        </div>
-        <div class="news-content">
-          <h3>Congratulations to the S6 Toppers</h3>
-          <p>The department congratulates all the top performers in the recent university examinations. Keep up the great work!</p>
-          <div class="news-thumb" style="background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; min-height: 200px;">
-            <span style="color: #6b7280; font-weight: 500;">Event Image</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="news-card wide">
-        <div class="date-badge">
-          <strong>15</strong>
-          <span>Aug</span>
-          <span>2024</span>
-        </div>
-        <div class="news-content">
-          <h3>Independence Day Hackathon</h3>
-          <p>Students participated in a 24-hour hackathon focused on building smart city solutions using IoT devices.</p>
-          <div class="news-thumb" style="background-color: #e5e7eb; display: flex; align-items: center; justify-content: center; min-height: 200px;">
-            <span style="color: #6b7280; font-weight: 500;">Event Image</span>
-          </div>
-        </div>
-      </article>
+      </div>
+      <div class="slider-nav">
+        <button id="slider-prev" aria-label="Previous slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
+        <button id="slider-next" aria-label="Next slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+      </div>
     </section>
 
-    <div class="pager" aria-hidden="true">
-      <div class="pager-btn">‹</div>
-      <div class="pager-btn">›</div>
-    </div>
+    <!-- Component B: Events Calendar Accordion -->
+    <section id="events-calendar-section" style="margin-top: 64px;">
+      <h2 class="section-title">Events Calendar</h2>
+      <div class="accordion-list" id="accordion-list">
+        <!-- Accordion rows injected by JS -->
+      </div>
+    </section>
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/eventsManager.js"></script>
 
   <footer class="site-footer">
     <div class="footer-inner">

@@ -1104,4 +1104,232 @@ li {
 .achievement-list strong {
   color: #111827;
   font-weight: 600;
+}
+
+/* =========================================
+   Events Page - Slider & Accordion
+   ========================================= */
+
+.news-slider-container {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) 60px;
+  gap: 24px;
+  align-items: center;
+  background: #f9fafb;
+  padding: 32px;
+  border-radius: 16px;
+  min-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .news-slider-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    text-align: center;
+    padding: 16px;
+  }
+}
+
+.slider-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #374151;
+}
+
+.slider-date strong {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--line);
+}
+
+.slider-date span {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.slider-center {
+  height: 350px;
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.slide-image-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-image-wrapper .placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5e7eb;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.slide-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+}
+
+.slide-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.slider-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .slider-nav {
+    flex-direction: row;
+  }
+}
+
+.slider-nav button {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #374151;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.slider-nav button:hover {
+  background: #f3f4f6;
+  color: var(--line);
+}
+
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accordion-row {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr) 40px;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.accordion-header:hover {
+  background: #f9fafb;
+}
+
+.accordion-date {
+  text-align: center;
+  color: var(--line);
+}
+
+.accordion-date strong {
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: block;
+}
+
+.accordion-date .month-year {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.accordion-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.accordion-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+  background: #f9fafb;
+}
+
+.accordion-row.open .accordion-content {
+  grid-template-rows: 1fr;
+}
+
+.accordion-row.open .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-inner {
+  overflow: hidden;
+  padding: 0 16px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.accordion-row.open .accordion-inner {
+  padding: 0 16px 16px 16px;
 }
