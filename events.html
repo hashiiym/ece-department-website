@@ -8,10 +8,11 @@
 <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <header class="site-header">
-    <div class="topbar">
+    <div class="topbar w-full flex justify-between items-center px-4 md:px-8 max-w-7xl mx-auto">
       <div class="logo">
         <div class="logo-img-wrapper">
           <img src="assets/ece-logo.png" alt="ECE PKD logo">
@@ -21,9 +22,14 @@
           <div class="dept-sub">Government Engineering College Palakkad</div>
         </div>
       </div>
-      <div class="langs">മലയാളം&nbsp;&nbsp; English</div>
+      <div class="flex items-center gap-4">
+        <div class="langs hidden md:block">മലയാളം&nbsp;&nbsp; English</div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 focus:outline-none" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
     </div>
-    <nav class="main-nav">
+    <nav class="main-nav hidden md:flex">
       <a href="index.html">HOME</a>
       <div class="nav-item">
         <a class="nav-trigger" href="faculty.html">PEOPLE</a>
@@ -57,13 +63,16 @@
       <a href="gallery.html">GALLERY</a>
       <a href="reach-us.html">REACH US</a>
     </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white w-full border-t border-gray-200">
+      <!-- JS will clone links here -->
+    </div>
   </header>
 
-  <main class="page">
-    <h1 class="page-title">News</h1>
+  <main class="page px-4 md:px-8 max-w-7xl mx-auto">
+    <h1 class="page-title text-3xl md:text-5xl font-bold">News</h1>
 
     <!-- Component A: News Slider -->
-    <section id="news-slider-section" class="news-slider-container">
+    <section id="news-slider-section" class="news-slider-container w-full overflow-hidden">
       <div id="slider-date-badge" class="slider-date">
         <!-- Date injected by JS -->
       </div>
@@ -86,7 +95,7 @@
 
     <!-- Component B: Events Calendar Accordion -->
     <section id="events-calendar-section" style="margin-top: 64px;">
-      <h2 class="section-title">Events Calendar</h2>
+      <h2 class="section-title text-3xl md:text-5xl font-bold">Events Calendar</h2>
       <div class="accordion-list" id="accordion-list">
         <!-- Accordion rows injected by JS -->
       </div>
@@ -94,6 +103,7 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/nav.js"></script>
   <script src="assets/js/eventsManager.js"></script>
 
   <footer class="site-footer">

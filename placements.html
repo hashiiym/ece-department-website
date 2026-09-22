@@ -6,10 +6,11 @@
   <title>Placements - Department ECE</title>
     <link rel="icon" type="image/png" href="assets/favcon.png">
 <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <header class="site-header">
-    <div class="topbar">
+    <div class="topbar w-full flex justify-between items-center px-4 md:px-8 max-w-7xl mx-auto">
       <div class="logo">
         <div class="logo-img-wrapper">
           <img src="assets/ece-logo.png" alt="ECE PKD logo">
@@ -19,9 +20,14 @@
           <div class="dept-sub">Government Engineering College Palakkad</div>
         </div>
       </div>
-      <div class="langs">Malayalam | English</div>
+      <div class="flex items-center gap-4">
+        <div class="langs hidden md:block">Malayalam | English</div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 focus:outline-none" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
     </div>
-    <nav class="main-nav">
+    <nav class="main-nav hidden md:flex">
       <a href="index.html">HOME</a>
       <div class="nav-item">
         <a class="nav-trigger" href="faculty.html">PEOPLE</a>
@@ -55,9 +61,12 @@
       <a href="gallery.html">GALLERY</a>
       <a href="reach-us.html">REACH US</a>
     </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white w-full border-t border-gray-200">
+      <!-- JS will clone links here -->
+    </div>
   </header>
 
-  <main class="page">
+  <main class="page px-4 md:px-8 max-w-7xl mx-auto">
     <section class="people-hero">
       <div class="hero-box">
         <div class="eyebrow-text">Career Outcomes</div>
@@ -85,7 +94,7 @@
     </section>
 
     <section style="margin-top: 48px;">
-      <h2 class="section-title">Recent Placement Reports</h2>
+      <h2 class="section-title text-3xl md:text-5xl font-bold">Recent Placement Reports</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 16px;">
 
         <a href="assets/placements/placement-report-2024.pdf.pdf" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; color: #374151; font-weight: 500; text-decoration: none; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); transition: box-shadow 0.2s;">
@@ -101,7 +110,7 @@
     </section>
 
     <section style="margin-top: 48px;">
-      <h2 class="section-title">Placement Posters</h2>
+      <h2 class="section-title text-3xl md:text-5xl font-bold">Placement Posters</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-top: 16px;">
         <div style="display: flex; flex-direction: column; gap: 8px;">
           <img src="assets/placements/placement-poster-2025.png" alt="Placement 2025" style="width: 100%; border-radius: 8px; border: 1px solid #e5e7eb; background: #e5e7eb;">
@@ -156,5 +165,6 @@
     </div>
         <div class="copyright">(c) 2026 - All rights reserved. Department of Electronics and Communication Engineering || Website Credits</div>
   </footer>
+  <script src="assets/js/nav.js"></script>
 </body>
 </html>

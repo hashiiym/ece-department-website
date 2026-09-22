@@ -6,10 +6,11 @@
   <title>Faculty - Department ECE</title>
     <link rel="icon" type="image/png" href="assets/favcon.png">
 <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <header class="site-header">
-    <div class="topbar">
+    <div class="topbar w-full flex justify-between items-center px-4 md:px-8 max-w-7xl mx-auto">
       <div class="logo">
         <div class="logo-img-wrapper">
           <img src="assets/ece-logo.png" alt="ECE PKD logo">
@@ -19,9 +20,14 @@
           <div class="dept-sub">Government Engineering College Palakkad</div>
         </div>
       </div>
-      <div class="langs">Malayalam | English</div>
+      <div class="flex items-center gap-4">
+        <div class="langs hidden md:block">Malayalam | English</div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 focus:outline-none" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
     </div>
-    <nav class="main-nav">
+    <nav class="main-nav hidden md:flex">
       <a href="index.html">HOME</a>
       <div class="nav-item">
         <a class="nav-trigger active" href="faculty.html">PEOPLE</a>
@@ -55,20 +61,23 @@
       <a href="gallery.html">GALLERY</a>
       <a href="reach-us.html">REACH US</a>
     </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white w-full border-t border-gray-200">
+      <!-- JS will clone links here -->
+    </div>
   </header>
 
-  <main class="page">
-    <h1 class="page-title">Faculty</h1>
+  <main class="page px-4 md:px-8 max-w-7xl mx-auto">
+    <h1 class="page-title text-3xl md:text-5xl font-bold">Faculty</h1>
 
     <div class="chip-row" style="margin-top:0; margin-bottom:22px;">
       <a class="soft-chip active" href="faculty.html">Faculty</a>
       <a class="soft-chip" href="staff.html">Technical Staff</a>
     </div>
 
-    <section class="people-card-grid">
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/anwar-hussain-m.jpg.webp" alt="Prof. ANWAR HUSSAIN M">
+          <img src="assets/faculty/anwar-hussain-m.jpg.webp" alt="Prof. ANWAR HUSSAIN M" class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>Prof. ANWAR HUSSAIN M</h3>
@@ -78,7 +87,7 @@
       </article>
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/bindu-p.jpg.webp" alt="Dr. BINDU P( PALAKKAL )">
+          <img src="assets/faculty/bindu-p.jpg.webp" alt="Dr. BINDU P( PALAKKAL )" class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>Dr. BINDU P( PALAKKAL )</h3>
@@ -88,7 +97,7 @@
       </article>
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/sudheer-tm.jpg.webp" alt="Prof. SUDHEER TM">
+          <img src="assets/faculty/sudheer-tm.jpg.webp" alt="Prof. SUDHEER TM" class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>Prof. SUDHEER TM</h3>
@@ -98,7 +107,7 @@
       </article>
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/gopi-c.jpg.webp" alt="GOPI C">
+          <img src="assets/faculty/gopi-c.jpg.webp" alt="GOPI C" class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>GOPI C</h3>
@@ -108,7 +117,7 @@
       </article>
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/anoop-cs.jpg.webp" alt="Dr. ANOOP C. S.">
+          <img src="assets/faculty/anoop-cs.jpg.webp" alt="Dr. ANOOP C. S." class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>Dr. ANOOP C. S.</h3>
@@ -118,7 +127,7 @@
       </article>
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/jithesh-cp.jpg.webp" alt="Prof. JITHESH C P">
+          <img src="assets/faculty/jithesh-cp.jpg.webp" alt="Prof. JITHESH C P" class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>Prof. JITHESH C P</h3>
@@ -128,7 +137,7 @@
       </article>
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/vijeesh-v.jpg.webp" alt="Mr. VIJEESH V">
+          <img src="assets/faculty/vijeesh-v.jpg.webp" alt="Mr. VIJEESH V" class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>Mr. VIJEESH V</h3>
@@ -138,7 +147,7 @@
       </article>
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/sreeram-r.jpg" alt="SREERAM R">
+          <img src="assets/faculty/sreeram-r.jpg" alt="SREERAM R" class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>SREERAM R</h3>
@@ -148,7 +157,7 @@
       </article>
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/chithira-pr.jpg.webp" alt="Dr. CHITHIRA P R">
+          <img src="assets/faculty/chithira-pr.jpg.webp" alt="Dr. CHITHIRA P R" class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>Dr. CHITHIRA P R</h3>
@@ -158,7 +167,7 @@
       </article>
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/neema-raj-c.jpg.webp" alt="Prof. NEEMA RAJ C">
+          <img src="assets/faculty/neema-raj-c.jpg.webp" alt="Prof. NEEMA RAJ C" class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>Prof. NEEMA RAJ C</h3>
@@ -168,7 +177,7 @@
       </article>
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/gargi-s.jpg.webp" alt="Mrs. GARGI.S">
+          <img src="assets/faculty/gargi-s.jpg.webp" alt="Mrs. GARGI.S" class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>Mrs. GARGI.S</h3>
@@ -178,7 +187,7 @@
       </article>
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/soumya-cp.jpg.webp" alt="Mrs. SOUMYA C P">
+          <img src="assets/faculty/soumya-cp.jpg.webp" alt="Mrs. SOUMYA C P" class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>Mrs. SOUMYA C P</h3>
@@ -188,7 +197,7 @@
       </article>
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/vipil-k.jpg.jpeg" alt="Mr. VIPIL K">
+          <img src="assets/faculty/vipil-k.jpg.jpeg" alt="Mr. VIPIL K" class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>Mr. VIPIL K</h3>
@@ -198,7 +207,7 @@
       </article>
       <article class="profile-card">
         <div class="profile-photo">
-          <img src="assets/faculty/aiswarya-ml.jpg.png" alt="AISWARYA M L">
+          <img src="assets/faculty/aiswarya-ml.jpg.png" alt="AISWARYA M L" class="w-full h-auto object-cover">
         </div>
         <div class="profile-body">
           <h3>AISWARYA M L</h3>
@@ -238,5 +247,6 @@
     </div>
         <div class="copyright">(c) 2026 - All rights reserved. Department of Electronics and Communication Engineering || Website Credits</div>
   </footer>
+  <script src="assets/js/nav.js"></script>
 </body>
 </html>
