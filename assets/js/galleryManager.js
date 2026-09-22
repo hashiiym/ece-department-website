@@ -1,4 +1,4 @@
-const SHEET_CSV_URL = "YOUR_CSV_LINK_HERE";
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQHEp9GcC_ATR5ShcMLnWmfbkhlzsQUYho4AWurey3qZEd062h7zjQG-rofF7MZqkg3bLJGmREb987E/pub?gid=1874148656&single=true&output=csv";
 
 document.addEventListener("DOMContentLoaded", () => {
   if (!document.getElementById('gallery-container')) return;
