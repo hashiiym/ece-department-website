@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     skipEmptyLines: true,
     complete: function (results) {
       allProjects = results.data.map(row => ({
-        id: row.id || Math.random().toString(36).substr(2, 9),
-        year: (row.year && row.year.trim()) ? row.year.trim() : "Unknown",
-        title: row.title || "Untitled Project",
-        description: row.description || "",
-        circuitDiagram: row.circuitDiagram || ""
+        id: row.id ? String(row.id).trim() : Math.random().toString(36).substr(2, 9),
+        year: row.year ? String(row.year).trim() : "Unknown",
+        title: row.title ? String(row.title).trim() : "Untitled Project",
+        description: row.description ? String(row.description).trim() : "",
+        circuitDiagram: row.circuitDiagram ? String(row.circuitDiagram).trim() : ""
       })).filter(item => item.title !== "Untitled Project");
 
       if (allProjects.length > 0) {
