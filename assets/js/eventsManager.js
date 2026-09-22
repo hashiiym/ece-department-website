@@ -106,7 +106,8 @@ function renderCalendarAccordion(regularEvents) {
 }
 
 async function fetchAndRenderEvents() {
-  Papa.parse(SHEET_CSV_URL, {
+  const cacheBusterUrl = SHEET_CSV_URL + "&t=" + new Date().getTime();
+  Papa.parse(cacheBusterUrl, {
     download: true,
     header: true,
     skipEmptyLines: true,
