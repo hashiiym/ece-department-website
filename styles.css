@@ -1104,4 +1104,75 @@ li {
 .achievement-list strong {
   color: #111827;
   font-weight: 600;
-}
+}
+
+/* ===== Academics page additions ===== */
+
+.academics-section {
+  margin-top: 28px;
+  scroll-margin-top: 90px;
+}
+
+.section-head {
+  margin-bottom: 16px;
+}
+
+/* Programmes table */
+.table-scroll {
+  overflow-x: auto;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+}
+
+.info-table th,
+.info-table td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--panel);
+  vertical-align: top;
+}
+
+.info-table thead th {
+  background: var(--panel-soft);
+  font-weight: 600;
+}
+
+.table-note {
+  margin-top: 12px;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* Outcomes accordion */
+.accordion {
+  border-top: 1px solid var(--panel);
+  padding: 4px 0;
+}
+
+.accordion:last-of-type {
+  border-bottom: 1px solid var(--panel);
+}
+
+.accordion summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 14px 0;
+}
+
+.accordion summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.accordion > p {
+  margin-bottom: 10px;
+}
+
+.accordion .bullets {
+  padding-bottom: 14px;
+}
+

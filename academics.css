@@ -1,0 +1,1396 @@
+/* =====================================================================
+   ACADEMICS PAGE — Dedicated Stylesheet
+   Department of Electronics and Communication Engineering
+   Government Engineering College Palakkad (Sreekrishnapuram)
+   ===================================================================== */
+
+/* ---- Design Tokens ---- */
+:root {
+  --acad-primary: #1a3a5c;
+  --acad-primary-light: #24507a;
+  --acad-accent: #2563eb;
+  --acad-accent-light: #3b82f6;
+  --acad-teal: #0d7377;
+  --acad-teal-light: #14919b;
+  --acad-surface: #f8f9fb;
+  --acad-surface-warm: #faf8f6;
+  --acad-border: #e2e5ea;
+  --acad-border-light: #eef0f3;
+  --acad-text: #1e293b;
+  --acad-text-muted: #64748b;
+  --acad-text-light: #94a3b8;
+  --acad-radius: 10px;
+  --acad-radius-lg: 16px;
+  --acad-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --acad-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  --acad-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.10);
+  --acad-transition: 0.25s cubic-bezier(.4, 0, .2, 1);
+  --acad-max-width: 1220px;
+}
+
+/* ---- Smooth Scroll ---- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* =====================================================================
+   SECONDARY ACADEMIC NAV
+   ===================================================================== */
+.acad-subnav {
+  position: sticky;
+  top: 96px;
+  /* below site-header */
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--acad-border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.acad-subnav::-webkit-scrollbar {
+  display: none;
+}
+
+.acad-subnav-inner {
+  display: flex;
+  gap: 4px;
+  max-width: var(--acad-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+
+.acad-subnav a {
+  display: inline-block;
+  padding: 12px 18px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--acad-text-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color var(--acad-transition), border-color var(--acad-transition);
+}
+
+.acad-subnav a:hover,
+.acad-subnav a.active {
+  color: var(--acad-primary);
+  border-bottom-color: var(--acad-accent);
+}
+
+/* =====================================================================
+   SECTION CONTAINER
+   ===================================================================== */
+.acad-section {
+  max-width: var(--acad-max-width);
+  margin: 0 auto;
+  padding: 56px 20px;
+  scroll-margin-top: 150px;
+}
+
+.acad-section+.acad-section {
+  padding-top: 0;
+}
+
+.acad-section-alt {
+  background: var(--acad-surface);
+  padding: 56px 0;
+  scroll-margin-top: 150px;
+}
+
+.acad-section-alt>.acad-inner {
+  max-width: var(--acad-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---- Section Headers ---- */
+.acad-section-label {
+  display: inline-block;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--acad-accent);
+  margin-bottom: 8px;
+}
+
+.acad-section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 800;
+  color: var(--acad-text);
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.acad-section-subtitle {
+  font-size: 1rem;
+  color: var(--acad-text-muted);
+  margin: 0 0 32px;
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+.acad-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: var(--acad-max-width);
+  margin: 0 auto;
+  padding: 40px 20px 32px;
+  scroll-margin-top: 150px;
+}
+
+@media (min-width: 900px) {
+  .acad-hero {
+    grid-template-columns: 1.1fr 0.9fr;
+    padding: 56px 20px 40px;
+  }
+}
+
+.acad-hero-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.acad-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  color: var(--acad-text);
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.acad-hero-desc {
+  font-size: 1.05rem;
+  color: var(--acad-text-muted);
+  line-height: 1.65;
+  margin: 0 0 24px;
+  max-width: 520px;
+}
+
+/* Hero visual — circuit pattern */
+.acad-hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.acad-circuit-pattern {
+  width: 100%;
+  max-width: 420px;
+  height: 260px;
+  border-radius: var(--acad-radius-lg);
+  background: linear-gradient(135deg, #f0f4f8 0%, #e8edf4 100%);
+  border: 1px solid var(--acad-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.acad-circuit-pattern svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+}
+
+/* Stat cards row below hero */
+.acad-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: var(--acad-max-width);
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+@media (min-width: 640px) {
+  .acad-stat-strip {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.acad-stat-card {
+  background: #fff;
+  border: 1px solid var(--acad-border);
+  border-radius: var(--acad-radius);
+  padding: 18px 20px;
+  text-align: center;
+  transition: box-shadow var(--acad-transition), transform var(--acad-transition);
+}
+
+.acad-stat-card:hover {
+  box-shadow: var(--acad-shadow);
+  transform: translateY(-2px);
+}
+
+.acad-stat-card .stat-value {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--acad-primary);
+  margin-bottom: 4px;
+}
+
+.acad-stat-card .stat-label {
+  font-size: 0.8rem;
+  color: var(--acad-text-muted);
+  font-weight: 500;
+}
+
+/* =====================================================================
+   PROGRAMME CARDS
+   ===================================================================== */
+.acad-prog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .acad-prog-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.acad-prog-card {
+  background: #fff;
+  border: 1px solid var(--acad-border);
+  border-radius: var(--acad-radius-lg);
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow var(--acad-transition), transform var(--acad-transition);
+}
+
+.acad-prog-card:hover {
+  box-shadow: var(--acad-shadow-lg);
+  transform: translateY(-3px);
+}
+
+.acad-prog-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.acad-prog-card.ug::before {
+  background: var(--acad-accent);
+}
+
+.acad-prog-card.pg::before {
+  background: var(--acad-teal);
+}
+
+.acad-prog-card .prog-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.acad-prog-card.ug .prog-badge {
+  background: #eff6ff;
+  color: var(--acad-accent);
+}
+
+.acad-prog-card.pg .prog-badge {
+  background: #ecfdf5;
+  color: var(--acad-teal);
+}
+
+.acad-prog-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--acad-text);
+  margin: 0 0 18px;
+  line-height: 1.3;
+}
+
+.acad-prog-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.acad-prog-meta .meta-row {
+  display: flex;
+  gap: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.acad-prog-meta .meta-label {
+  color: var(--acad-text-muted);
+  min-width: 100px;
+  flex-shrink: 0;
+  font-weight: 500;
+}
+
+.acad-prog-meta .meta-value {
+  color: var(--acad-text);
+  font-weight: 600;
+}
+
+.acad-prog-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--acad-transition), transform var(--acad-transition);
+  border: none;
+  cursor: pointer;
+}
+
+.acad-prog-btn.ug-btn {
+  background: var(--acad-accent);
+  color: #fff;
+}
+
+.acad-prog-btn.ug-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.acad-prog-btn.pg-btn {
+  background: var(--acad-teal);
+  color: #fff;
+}
+
+.acad-prog-btn.pg-btn:hover {
+  background: #0b5f62;
+  transform: translateY(-1px);
+}
+
+/* =====================================================================
+   GLANCE GRID
+   ===================================================================== */
+.acad-glance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (min-width: 640px) {
+  .acad-glance-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .acad-glance-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.acad-glance-item {
+  background: #fff;
+  border: 1px solid var(--acad-border);
+  border-radius: var(--acad-radius);
+  padding: 20px 16px;
+  text-align: center;
+  transition: box-shadow var(--acad-transition);
+}
+
+.acad-glance-item:hover {
+  box-shadow: var(--acad-shadow);
+}
+
+.acad-glance-item .glance-value {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--acad-primary);
+  margin-bottom: 6px;
+}
+
+.acad-glance-item .glance-label {
+  font-size: 0.78rem;
+  color: var(--acad-text-muted);
+  line-height: 1.4;
+}
+
+/* =====================================================================
+   VISION & MISSION
+   ===================================================================== */
+.acad-vm-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .acad-vm-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.acad-vm-card {
+  background: #fff;
+  border: 1px solid var(--acad-border);
+  border-radius: var(--acad-radius-lg);
+  padding: 32px 28px;
+  position: relative;
+}
+
+.acad-vm-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--acad-primary);
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.acad-vm-card h3 .vm-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.acad-vm-card.vision h3 .vm-icon {
+  background: #eff6ff;
+  color: var(--acad-accent);
+}
+
+.acad-vm-card.mission h3 .vm-icon {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.acad-vm-card blockquote {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--acad-text);
+  font-style: italic;
+  border-left: 3px solid var(--acad-accent);
+  padding-left: 16px;
+}
+
+.acad-mission-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.acad-mission-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--acad-text);
+}
+
+.acad-mission-list .mission-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--acad-surface);
+  border: 1px solid var(--acad-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--acad-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* =====================================================================
+   PEO CARDS
+   ===================================================================== */
+.acad-peo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+@media (min-width: 768px) {
+  .acad-peo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.acad-peo-card {
+  background: #fff;
+  border: 1px solid var(--acad-border);
+  border-radius: var(--acad-radius-lg);
+  padding: 28px 24px;
+  transition: box-shadow var(--acad-transition), transform var(--acad-transition);
+}
+
+.acad-peo-card:hover {
+  box-shadow: var(--acad-shadow);
+  transform: translateY(-2px);
+}
+
+.acad-peo-card .peo-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: var(--acad-accent);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.acad-peo-card p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--acad-text);
+  margin: 0;
+}
+
+/* =====================================================================
+   PSO CARDS
+   ===================================================================== */
+.acad-pso-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .acad-pso-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.acad-pso-card {
+  background: #fff;
+  border: 1px solid var(--acad-border);
+  border-radius: var(--acad-radius-lg);
+  padding: 30px 26px;
+  transition: box-shadow var(--acad-transition);
+}
+
+.acad-pso-card:hover {
+  box-shadow: var(--acad-shadow);
+}
+
+.acad-pso-card .pso-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.acad-pso-card .pso-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #f0fdfa;
+  color: var(--acad-teal);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.acad-pso-card .pso-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--acad-text);
+  margin: 0;
+}
+
+.acad-pso-card p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--acad-text);
+  margin: 0;
+}
+
+/* =====================================================================
+   PO ACCORDION
+   ===================================================================== */
+.acad-po-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 860px;
+}
+
+.acad-po-item {
+  border: 1px solid var(--acad-border);
+  border-radius: var(--acad-radius);
+  overflow: hidden;
+  transition: box-shadow var(--acad-transition);
+}
+
+.acad-po-item:hover {
+  box-shadow: var(--acad-shadow-sm);
+}
+
+.acad-po-item summary {
+  padding: 14px 20px;
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: var(--acad-text);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  transition: background var(--acad-transition);
+  user-select: none;
+}
+
+.acad-po-item summary:hover {
+  background: var(--acad-surface);
+}
+
+.acad-po-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.acad-po-item summary::after {
+  content: '+';
+  font-size: 1.2rem;
+  color: var(--acad-text-muted);
+  transition: transform 0.3s ease;
+  font-weight: 400;
+}
+
+.acad-po-item[open] summary::after {
+  content: '−';
+}
+
+.acad-po-item summary .po-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: var(--acad-surface);
+  color: var(--acad-accent);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.acad-po-item .po-content {
+  padding: 4px 20px 18px 62px;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--acad-text-muted);
+  border-top: 1px solid var(--acad-border-light);
+}
+
+/* =====================================================================
+   CORE LEARNING AREAS GRID
+   ===================================================================== */
+.acad-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (min-width: 640px) {
+  .acad-areas-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .acad-areas-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.acad-area-card {
+  background: #fff;
+  border: 1px solid var(--acad-border);
+  border-radius: var(--acad-radius);
+  padding: 22px 16px;
+  text-align: center;
+  transition: box-shadow var(--acad-transition), transform var(--acad-transition);
+}
+
+.acad-area-card:hover {
+  box-shadow: var(--acad-shadow);
+  transform: translateY(-2px);
+}
+
+.acad-area-card .area-icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 12px;
+  border-radius: 10px;
+  background: var(--acad-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acad-area-card .area-icon svg {
+  width: 22px;
+  height: 22px;
+  color: var(--acad-accent);
+}
+
+.acad-area-card h4 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--acad-text);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* =====================================================================
+   LABORATORY CARDS
+   ===================================================================== */
+.acad-labs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .acad-labs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .acad-labs-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.acad-lab-card {
+  background: #fff;
+  border: 1px solid var(--acad-border);
+  border-radius: var(--acad-radius-lg);
+  overflow: hidden;
+  transition: box-shadow var(--acad-transition), transform var(--acad-transition);
+}
+
+.acad-lab-card:hover {
+  box-shadow: var(--acad-shadow);
+  transform: translateY(-2px);
+}
+
+.acad-lab-card-header {
+  padding: 24px 22px 14px;
+}
+
+.acad-lab-card-header .lab-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #fef3c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.acad-lab-card-header .lab-icon svg {
+  width: 20px;
+  height: 20px;
+  color: #d97706;
+}
+
+.acad-lab-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--acad-text);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.acad-lab-card .lab-brief {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--acad-text-muted);
+  margin: 0;
+  padding: 0 22px;
+}
+
+.acad-lab-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px 22px;
+}
+
+.acad-lab-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--acad-surface);
+  color: var(--acad-text-muted);
+  border: 1px solid var(--acad-border-light);
+}
+
+.acad-lab-card details {
+  border-top: 1px solid var(--acad-border-light);
+}
+
+.acad-lab-card details summary {
+  padding: 12px 22px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--acad-accent);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background var(--acad-transition);
+}
+
+.acad-lab-card details summary:hover {
+  background: var(--acad-surface);
+}
+
+.acad-lab-card details summary::-webkit-details-marker {
+  display: none;
+}
+
+.acad-lab-card details summary::after {
+  content: '→';
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.acad-lab-card details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.acad-lab-detail {
+  padding: 4px 22px 18px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--acad-text);
+  border-top: 1px solid var(--acad-border-light);
+}
+
+/* =====================================================================
+   CURRICULUM CARDS
+   ===================================================================== */
+.acad-curriculum-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .acad-curriculum-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.acad-curriculum-card {
+  background: #fff;
+  border: 1px solid var(--acad-border);
+  border-radius: var(--acad-radius-lg);
+  padding: 28px 24px;
+}
+
+.acad-curriculum-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--acad-text);
+  margin: 0 0 16px;
+}
+
+.acad-curriculum-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.acad-curriculum-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--acad-surface);
+  border: 1px solid var(--acad-border-light);
+  text-decoration: none;
+  color: var(--acad-text);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: background var(--acad-transition), border-color var(--acad-transition);
+}
+
+.acad-curriculum-link:hover {
+  background: #eff6ff;
+  border-color: var(--acad-accent);
+  color: var(--acad-accent);
+}
+
+.acad-curriculum-link svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--acad-text-muted);
+}
+
+.acad-curriculum-link:hover svg {
+  color: var(--acad-accent);
+}
+
+/* =====================================================================
+   RESOURCES / DOWNLOADS
+   ===================================================================== */
+.acad-resources-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .acad-resources-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.acad-resource-category {
+  background: #fff;
+  border: 1px solid var(--acad-border);
+  border-radius: var(--acad-radius-lg);
+  overflow: hidden;
+}
+
+.acad-resource-category-header {
+  padding: 18px 22px;
+  background: var(--acad-surface);
+  border-bottom: 1px solid var(--acad-border-light);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.acad-resource-category-header h3 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--acad-text);
+  margin: 0;
+}
+
+.acad-resource-category-header .cat-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.acad-resource-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.acad-resource-list li {
+  border-bottom: 1px solid var(--acad-border-light);
+}
+
+.acad-resource-list li:last-child {
+  border-bottom: none;
+}
+
+.acad-resource-list a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 22px;
+  font-size: 0.84rem;
+  color: var(--acad-text);
+  text-decoration: none;
+  transition: background var(--acad-transition), color var(--acad-transition);
+  font-weight: 500;
+}
+
+.acad-resource-list a:hover {
+  background: var(--acad-surface);
+  color: var(--acad-accent);
+}
+
+.acad-resource-list a svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--acad-text-light);
+}
+
+.acad-resource-list a:hover svg {
+  color: var(--acad-accent);
+}
+
+/* =====================================================================
+   TIMELINE
+   ===================================================================== */
+.acad-timeline {
+  position: relative;
+  padding-left: 40px;
+  max-width: 600px;
+}
+
+.acad-timeline::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--acad-border);
+}
+
+.acad-timeline-item {
+  position: relative;
+  padding-bottom: 32px;
+}
+
+.acad-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.acad-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--acad-accent);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--acad-accent);
+}
+
+.acad-timeline-item .tl-year {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--acad-primary);
+  margin: 0 0 4px;
+}
+
+.acad-timeline-item .tl-desc {
+  font-size: 0.9rem;
+  color: var(--acad-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* =====================================================================
+   BEYOND THE CLASSROOM
+   ===================================================================== */
+.acad-beyond-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (min-width: 768px) {
+  .acad-beyond-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.acad-beyond-item {
+  background: #fff;
+  border: 1px solid var(--acad-border);
+  border-radius: var(--acad-radius);
+  padding: 20px 16px;
+  text-align: center;
+  transition: box-shadow var(--acad-transition);
+}
+
+.acad-beyond-item:hover {
+  box-shadow: var(--acad-shadow-sm);
+}
+
+.acad-beyond-item .beyond-icon {
+  width: 38px;
+  height: 38px;
+  margin: 0 auto 10px;
+  border-radius: 10px;
+  background: #fef3c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acad-beyond-item .beyond-icon svg {
+  width: 18px;
+  height: 18px;
+  color: #d97706;
+}
+
+.acad-beyond-item h4 {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--acad-text);
+  margin: 0 0 4px;
+}
+
+.acad-beyond-item p {
+  font-size: 0.75rem;
+  color: var(--acad-text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* =====================================================================
+   QUICK ACCESS
+   ===================================================================== */
+.acad-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (min-width: 640px) {
+  .acad-quick-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .acad-quick-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.acad-quick-card {
+  background: #fff;
+  border: 1px solid var(--acad-border);
+  border-radius: var(--acad-radius);
+  padding: 22px 16px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--acad-text);
+  transition: box-shadow var(--acad-transition), transform var(--acad-transition), border-color var(--acad-transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.acad-quick-card:hover {
+  box-shadow: var(--acad-shadow);
+  transform: translateY(-2px);
+  border-color: var(--acad-accent);
+}
+
+.acad-quick-card .quick-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--acad-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acad-quick-card .quick-icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--acad-accent);
+}
+
+.acad-quick-card:hover .quick-icon {
+  background: #eff6ff;
+}
+
+.acad-quick-card span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* =====================================================================
+   CONTEXTUAL LINKS ROW
+   ===================================================================== */
+.acad-links-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.acad-context-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--acad-accent);
+  text-decoration: none;
+  transition: gap var(--acad-transition);
+}
+
+.acad-context-link:hover {
+  gap: 10px;
+}
+
+/* =====================================================================
+   ANIMATIONS
+   ===================================================================== */
+.acad-fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.acad-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acad-fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* =====================================================================
+   RESPONSIVE — SMALL SCREENS
+   ===================================================================== */
+@media (max-width: 767px) {
+  .acad-hero {
+    padding: 28px 16px 20px;
+  }
+
+  .acad-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .acad-hero-visual {
+    display: none;
+  }
+
+  .acad-section {
+    padding: 36px 16px;
+  }
+
+  .acad-section-alt {
+    padding: 36px 0;
+  }
+
+  .acad-section-alt>.acad-inner {
+    padding: 0 16px;
+  }
+
+  .acad-stat-strip {
+    padding: 0 16px 28px;
+  }
+
+  .acad-prog-card {
+    padding: 24px 20px;
+  }
+
+  .acad-vm-card {
+    padding: 24px 20px;
+  }
+
+  .acad-po-item summary {
+    padding: 12px 16px;
+    font-size: 0.86rem;
+  }
+
+  .acad-po-item .po-content {
+    padding: 4px 16px 14px 48px;
+  }
+
+  .acad-lab-card-header {
+    padding: 20px 18px 12px;
+  }
+
+  .acad-lab-card .lab-brief,
+  .acad-lab-tags,
+  .acad-lab-card details summary,
+  .acad-lab-detail {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .acad-timeline {
+    padding-left: 32px;
+  }
+
+  .acad-resource-list a {
+    padding: 10px 18px;
+  }
+}
+
+/* =====================================================================
+   FOCUS STYLES
+   ===================================================================== */
+.acad-subnav a:focus-visible,
+.acad-prog-btn:focus-visible,
+.acad-quick-card:focus-visible,
+.acad-curriculum-link:focus-visible,
+.acad-resource-list a:focus-visible,
+.acad-po-item summary:focus-visible,
+.acad-lab-card details summary:focus-visible {
+  outline: 2px solid var(--acad-accent);
+  outline-offset: 2px;
+}
