@@ -385,7 +385,7 @@ li {
 .about-grid,
 .hod-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 190px;
+  
   gap: 38px;
   align-items: center;
 }
@@ -404,7 +404,7 @@ li {
 }
 
 .hod-grid {
-  grid-template-columns: 280px minmax(0, 1fr);
+  
   align-items: start;
 }
 
@@ -450,7 +450,7 @@ li {
 
 .feature-news {
   display: grid;
-  grid-template-columns: 78px minmax(0, 1fr) 44px;
+  
   gap: 18px;
   align-items: center;
 }
@@ -551,7 +551,7 @@ li {
 
 .calendar-row {
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr) 44px;
+  
   gap: 18px;
   align-items: center;
 }
@@ -565,7 +565,7 @@ li {
 
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  
   gap: 20px;
 }
 
@@ -575,7 +575,7 @@ li {
   background: #d8d8d8;
   padding: 16px;
   display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
+  
   gap: 12px;
 }
 
@@ -625,7 +625,7 @@ li {
 
 .project-page {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 120px;
+  
   gap: 22px;
   align-items: start;
 }
@@ -680,7 +680,7 @@ li {
 
 .project-grid {
   display: grid;
-  grid-template-columns: 1fr 0.8fr;
+  
   gap: 6px;
 }
 
@@ -696,7 +696,7 @@ li {
 
 .project-bottom-row {
   display: grid;
-  grid-template-columns: 0.52fr 1.48fr;
+  
   gap: 6px;
 }
 
@@ -810,7 +810,7 @@ li {
 
 .people-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  
   gap: 34px;
 }
 
@@ -909,9 +909,9 @@ li {
 }
 
 .gallery-rows { display: flex; flex-direction: column; gap: 4px; }
-.gallery-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; }
-.gallery-row.tile-bias-left { grid-template-columns: .7fr 1.2fr 1.1fr; }
-.gallery-row.tile-bias-center { grid-template-columns: 1.1fr .7fr 1.2fr; }
+.gallery-row { display: grid;  gap: 4px; }
+.gallery-row.tile-bias-left {  }
+.gallery-row.tile-bias-center {  }
 .gallery-tile { background: #d8d8d8; min-height: 112px; }
 .gallery-note { margin-top: 12px; text-align: center; font-size: 22px; }
 
@@ -1112,7 +1112,7 @@ li {
 
 .news-slider-container {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr) 60px;
+  
   gap: 24px;
   align-items: center;
   background: #f9fafb;
@@ -1123,7 +1123,7 @@ li {
 
 @media (max-width: 768px) {
   .news-slider-container {
-    grid-template-columns: 1fr;
+    
     grid-template-rows: auto 1fr auto;
     text-align: center;
     padding: 16px;
@@ -1263,7 +1263,7 @@ li {
 
 .accordion-header {
   display: grid;
-  grid-template-columns: 80px minmax(0, 1fr) 40px;
+  
   gap: 16px;
   align-items: center;
   padding: 16px;
@@ -1332,4 +1332,195 @@ li {
 
 .accordion-row.open .accordion-inner {
   padding: 0 16px 16px 16px;
-}
+}
+
+/* Desktop Grid Layouts */
+@media (min-width: 768px) {
+  /* =========================================
+   Department Specific Components
+   ========================================= */
+
+.about-grid,
+.hod-grid {
+    grid-template-columns: minmax(0, 1fr) 190px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hod-grid {
+    grid-template-columns: 280px minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  /* =========================================
+   News & Events Components
+   ========================================= */
+
+.feature-news {
+    grid-template-columns: 78px minmax(0, 1fr) 44px;
+  }
+}
+
+@media (min-width: 768px) {
+  .calendar-row {
+    grid-template-columns: 72px minmax(0, 1fr) 44px;
+  }
+}
+
+@media (min-width: 768px) {
+  .news-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .news-card {
+    grid-template-columns: 52px minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  /* =========================================
+   Other Specialized Components
+   ========================================= */
+
+.project-page {
+    grid-template-columns: minmax(0, 1fr) 120px;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr 0.8fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-bottom-row {
+    grid-template-columns: 0.52fr 1.48fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .people-card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery-row {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery-row.tile-bias-left {
+    grid-template-columns: .7fr 1.2fr 1.1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery-row.tile-bias-center {
+    grid-template-columns: 1.1fr .7fr 1.2fr;
+  }
+}
+
+@media (min-width: 768px) {
+  /* =========================================
+   Events Page - Slider & Accordion
+   ========================================= */
+
+.news-slider-container {
+    grid-template-columns: 150px minmax(0, 1fr) 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .news-slider-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .accordion-header {
+    grid-template-columns: 80px minmax(0, 1fr) 40px;
+  }
+}
+
+/* =========================================
+   Mobile Navigation & Fixes
+   ========================================= */
+@media (max-width: 767px) {
+  .main-nav.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .main-nav {
+    display: none;
+  }
+  .nav-dropdown {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    padding-left: 16px;
+    display: none;
+  }
+  .nav-dropdown.open {
+    display: block;
+  }
+  
+  .news-slider-container {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .accordion-title {
+    flex: 1;
+    padding-right: 16px;
+  }
+  
+  .accordion-header {
+    padding: 12px;
+  }
+}
+
+/* Mobile Button display on small screens */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #333;
+}
+@media (max-width: 767px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+  .langs {
+    display: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
