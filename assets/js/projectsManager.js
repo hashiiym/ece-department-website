@@ -1,5 +1,6 @@
 const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQHEp9GcC_ATR5ShcMLnWmfbkhlzsQUYho4AWurey3qZEd062h7zjQG-rofF7MZqkg3bLJGmREb987E/pub?gid=1106157173&single=true&output=csv";
 let allProjects = [];
+let activeYear = "All";
 
 document.addEventListener("DOMContentLoaded", () => {
   if (!document.getElementById('projects-container')) return;
@@ -13,18 +14,21 @@ document.addEventListener("DOMContentLoaded", () => {
     complete: function (results) {
       allProjects = results.data.map(row => ({
         id: row.id || Math.random().toString(36).substr(2, 9),
-        year: row.year || "Unknown",
+        year: (row.year && row.year.trim()) ? row.year.trim() : "Unknown",
         title: row.title || "Untitled Project",
         description: row.description || "",
         circuitDiagram: row.circuitDiagram || ""
       })).filter(item => item.title !== "Untitled Project");
 
-      renderSidebar();
-
-      // Default to the most recent year if projects exist
       if (allProjects.length > 0) {
+        // Extract Unique Years
         const uniqueYears = [...new Set(allProjects.map(p => p.year))].sort((a, b) => b.localeCompare(a));
-        filterByYear(uniqueYears[0]);
+        
+        // Default to newest year
+        activeYear = uniqueYears[0];
+        
+        generateSidebarButtons(uniqueYears);
+        filterAndRender();
       }
     },
     error: function (err) {
@@ -33,93 +37,111 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function renderSidebar() {
-  const container = document.getElementById('year-filter-container');
+function generateSidebarButtons(uniqueYears) {
+  const container = document.getElementById('year-filters');
   if (!container) return;
 
   container.innerHTML = '';
 
-  // Extract unique years and sort descending
-  const uniqueYears = [...new Set(allProjects.map(p => p.year))].sort((a, b) => b.localeCompare(a));
-
   uniqueYears.forEach(year => {
     const btn = document.createElement('button');
-    btn.className = 'px-4 py-2 text-sm font-semibold rounded-full border border-gray-200 text-gray-600 hover:bg-gray-100 transition-colors focus:outline-none year-btn';
+    // Default inactive classes
+    btn.className = 'px-4 py-2 text-sm font-semibold rounded-full border border-gray-200 text-gray-600 hover:bg-gray-100 transition-colors focus:outline-none year-btn text-left';
     btn.dataset.year = year;
     btn.textContent = year;
 
     btn.addEventListener('click', () => {
-      filterByYear(year);
+      activeYear = year;
+      filterAndRender();
     });
 
     container.appendChild(btn);
   });
 }
 
-function filterByYear(selectedYear) {
-  // Update active state of buttons
+function filterAndRender() {
+  // Visually highlight the active button
   document.querySelectorAll('.year-btn').forEach(btn => {
-    if (btn.dataset.year === selectedYear) {
-      btn.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
-      btn.classList.remove('text-gray-600', 'hover:bg-gray-100');
+    if (btn.dataset.year === activeYear) {
+      btn.className = 'px-4 py-2 text-sm font-semibold rounded-full border border-blue-600 bg-blue-600 text-white transition-colors focus:outline-none year-btn text-left';
     } else {
-      btn.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
-      btn.classList.add('text-gray-600', 'hover:bg-gray-100');
+      btn.className = 'px-4 py-2 text-sm font-semibold rounded-full border border-gray-200 text-gray-600 hover:bg-gray-100 transition-colors focus:outline-none year-btn text-left';
     }
   });
 
-  const filtered = allProjects.filter(p => p.year === selectedYear);
-  renderMainContent(filtered);
+  // Filter the master CSV data array
+  const filteredData = allProjects.filter(project => project.year === activeYear);
+  
+  // Call renderProjects
+  renderProjects(filteredData);
 }
 
-function renderMainContent(projects) {
-  const featuredEl = document.getElementById('featured-project');
-  const featuredImg = document.getElementById('featured-image');
-  const featuredTitle = document.getElementById('featured-title');
-  const featuredDesc = document.getElementById('featured-desc');
-  const gridContainer = document.getElementById('projects-grid');
+function renderProjects(data) {
+  const container = document.getElementById('projects-container');
+  if (!container) return;
 
-  if (!gridContainer || projects.length === 0) {
-    if (featuredEl) featuredEl.classList.add('hidden');
-    if (gridContainer) gridContainer.innerHTML = '<p class="text-gray-500 col-span-2">No projects found for this year.</p>';
+  container.innerHTML = '';
+
+  if (data.length === 0) {
+    container.innerHTML = '<p class="text-gray-500">No projects found for this year.</p>';
     return;
   }
 
-  // Render Featured (first project)
-  const featuredProject = projects[0];
-  if (featuredProject.circuitDiagram) {
-    featuredImg.src = featuredProject.circuitDiagram;
-    featuredImg.parentElement.style.display = 'flex';
-  } else {
-    featuredImg.parentElement.style.display = 'none';
-  }
-  featuredTitle.textContent = featuredProject.title;
-  featuredDesc.textContent = featuredProject.description;
-  featuredEl.classList.remove('hidden');
+  // Create flex column container for featured + grid
+  const wrapper = document.createElement('div');
+  wrapper.className = 'flex flex-col gap-8 w-full';
 
-  // Render Grid (remaining projects)
-  gridContainer.innerHTML = '';
-  const remaining = projects.slice(1);
-
-  remaining.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow';
-
-    let imgHtml = '';
-    if (item.circuitDiagram) {
-      imgHtml = `
-        <div class="w-full h-48 bg-gray-50 rounded-lg overflow-hidden mb-4 p-2 flex items-center justify-center">
-          <img src="${item.circuitDiagram}" alt="${item.title}" class="w-full h-full object-contain">
-        </div>
-      `;
-    }
-
-    card.innerHTML = `
-      ${imgHtml}
-      <h3 class="text-xl font-bold text-gray-900 mb-2">${item.title}</h3>
-      <p class="text-gray-600 text-sm leading-relaxed flex-1">${item.description}</p>
+  // 1. Render Featured Project (First Item)
+  const featured = data[0];
+  const featuredCard = document.createElement('div');
+  featuredCard.className = 'w-full bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden';
+  
+  let featuredImgHtml = '';
+  if (featured.circuitDiagram) {
+    featuredImgHtml = `
+      <div class="w-full h-[300px] md:h-[400px] bg-gray-50 flex items-center justify-center p-4">
+         <img src="${featured.circuitDiagram}" alt="${featured.title}" class="w-full h-full object-contain">
+      </div>
     `;
+  }
+  
+  featuredCard.innerHTML = `
+    ${featuredImgHtml}
+    <div class="p-6 md:p-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">${featured.title}</h2>
+      <p class="text-gray-600 leading-relaxed">${featured.description}</p>
+    </div>
+  `;
+  wrapper.appendChild(featuredCard);
 
-    gridContainer.appendChild(card);
-  });
+  // 2. Render Remaining Projects Grid
+  const remaining = data.slice(1);
+  if (remaining.length > 0) {
+    const grid = document.createElement('div');
+    grid.className = 'grid grid-cols-1 md:grid-cols-2 gap-6 w-full';
+
+    remaining.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow';
+      
+      let imgHtml = '';
+      if (item.circuitDiagram) {
+        imgHtml = `
+          <div class="w-full h-48 bg-gray-50 rounded-lg overflow-hidden mb-4 p-2 flex items-center justify-center">
+            <img src="${item.circuitDiagram}" alt="${item.title}" class="w-full h-full object-contain">
+          </div>
+        `;
+      }
+
+      card.innerHTML = `
+        ${imgHtml}
+        <h3 class="text-xl font-bold text-gray-900 mb-2">${item.title}</h3>
+        <p class="text-gray-600 text-sm leading-relaxed flex-1">${item.description}</p>
+      `;
+      grid.appendChild(card);
+    });
+    wrapper.appendChild(grid);
+  }
+
+  container.appendChild(wrapper);
 }
