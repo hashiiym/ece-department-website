@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Events - Department ECE</title>
-  <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/favcon.png">
+<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -18,7 +21,13 @@
           <div class="dept-sub">Government Engineering College Palakkad</div>
         </div>
       </div>
-      <div class="langs">മലയാളം&nbsp;&nbsp; English</div>
+      
+      <div class="header-actions">
+        <div class="langs">മലയാളം&nbsp;&nbsp; English</div>
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
     </div>
     <nav class="main-nav">
       <a href="index.html">HOME</a>
@@ -59,113 +68,39 @@
   <main class="page">
     <h1 class="page-title">News</h1>
 
-    <section class="news-grid">
-      <article class="news-card wide">
-        <div class="date-badge">
-          <strong>XX</strong>
-          <span>&lt;month&gt;</span>
-          <span>&lt;year&gt;</span>
-        </div>
-        <div class="news-content">
-          <h3>Aparna V Shenoy of S3 ECE was selected for Interzone Volleyball Team</h3>
-          <div class="news-thumb">
-            <img src="assets/figma/design/news.png" alt="News poster">
+    <!-- Component A: News Slider -->
+    <section id="news-slider-section" class="news-slider-container">
+      <div id="slider-date-badge" class="slider-date">
+        <!-- Date injected by JS -->
+      </div>
+      <div class="slider-center">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper" id="swiper-wrapper">
+            <!-- Slides injected by JS -->
           </div>
         </div>
-      </article>
-
-      <article class="news-card">
-        <div class="date-badge">
-          <strong>XX</strong>
-          <span>&lt;month&gt;</span>
-          <span>&lt;year&gt;</span>
-        </div>
-        <div class="news-content">
-          <h3>&lt;head line..&gt;</h3>
-          <p>&lt;..............small discription.....<br>.................................<br>.................................<br>.................................<br>..............&gt;</p>
-          <div class="news-thumb">
-            <img src="assets/figma/design/Group 7.png" alt="Department achievement poster">
-          </div>
-        </div>
-      </article>
-
-      <article class="news-card wide">
-        <div class="date-badge">
-          <strong>XX</strong>
-          <span>&lt;month&gt;</span>
-          <span>&lt;year&gt;</span>
-        </div>
-        <div class="news-content">
-          <h3>&lt;head line&gt;</h3>
-          <p>&lt;........small discription....<br>.................<br>.................<br>.................<br>.................&gt;</p>
-          <div class="news-thumb">
-            <img src="assets/figma/design/Group 6.png" alt="Batch toppers poster">
-          </div>
-        </div>
-      </article>
-
-      <article class="news-card">
-        <div class="date-badge">
-          <strong>XX</strong>
-          <span>&lt;month&gt;</span>
-          <span>&lt;year&gt;</span>
-        </div>
-        <div class="news-content">
-          <h3>&lt;head line&gt;</h3>
-          <div class="news-thumb">
-            <img src="assets/figma/design/Group 10.png" alt="Topper card">
-          </div>
-        </div>
-      </article>
-
-      <article class="news-card wide">
-        <div class="date-badge">
-          <strong>XX</strong>
-          <span>&lt;month&gt;</span>
-          <span>&lt;year&gt;</span>
-        </div>
-        <div class="news-content">
-          <h3>&lt;head line&gt;</h3>
-          <p>&lt;.....discription............<br>.................................<br>.................................<br>.................................<br>.................................&gt;</p>
-          <div class="news-thumb">
-            <img src="assets/figma/design/Group 15.png" alt="Topper card">
-          </div>
-        </div>
-      </article>
-
-      <article class="news-card">
-        <div class="date-badge">
-          <strong>XX</strong>
-          <span>&lt;month&gt;</span>
-          <span>&lt;year&gt;</span>
-        </div>
-        <div class="news-content">
-          <h3>&lt;Congratulations to the S6 Toppers&gt;</h3>
-          <div class="news-thumb">
-            <img src="assets/figma/design/Rectangle 55.png" alt="S6 toppers poster">
-          </div>
-        </div>
-      </article>
-
-      <article class="news-card wide">
-        <div class="date-badge">
-          <strong>XX</strong>
-          <span>&lt;month&gt;</span>
-          <span>&lt;year&gt;</span>
-        </div>
-        <div class="news-content">
-          <div class="news-thumb">
-            <img src="assets/figma/design/Group 30.png" alt="Hackathon poster">
-          </div>
-        </div>
-      </article>
+      </div>
+      <div class="slider-nav">
+        <button id="slider-prev" aria-label="Previous slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
+        <button id="slider-next" aria-label="Next slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+      </div>
     </section>
 
-    <div class="pager" aria-hidden="true">
-      <div class="pager-btn">‹</div>
-      <div class="pager-btn">›</div>
-    </div>
+    <!-- Component B: Events Calendar Accordion -->
+    <section id="events-calendar-section" style="margin-top: 64px;">
+      <h2 class="section-title">Events Calendar</h2>
+      <div class="accordion-list" id="accordion-list">
+        <!-- Accordion rows injected by JS -->
+      </div>
+    </section>
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/eventsManager.js"></script>
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -196,5 +131,6 @@
     </div>
         <div class="copyright">© 2026 - All rights reserved. Department of Electronics and Communication Engineering || Website Credits</div>
   </footer>
+  <script src="assets/js/nav.js"></script>
 </body>
 </html>
