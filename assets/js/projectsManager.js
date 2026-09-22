@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     download: true,
     header: true,
     skipEmptyLines: true,
+    transformHeader: function(header) {
+      return header.trim();
+    },
     complete: function (results) {
       allProjects = results.data.map(row => ({
         id: row.id ? String(row.id).trim() : Math.random().toString(36).substr(2, 9),

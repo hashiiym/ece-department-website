@@ -9,12 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
     download: true,
     header: true,
     skipEmptyLines: true,
+    transformHeader: function(header) {
+      return header.trim();
+    },
     complete: function(results) {
       const data = results.data.map(row => ({
-        id: row.id || Math.random().toString(36).substr(2, 9),
-        date: row.date || "",
-        eventName: row.eventName || "Gallery Event",
-        image: row.image || ""
+        id: row.id ? String(row.id).trim() : Math.random().toString(36).substr(2, 9),
+        date: row.date ? String(row.date).trim() : "",
+        eventName: row.eventName ? String(row.eventName).trim() : "Gallery Event",
+        image: row.image ? String(row.image).trim() : ""
       })).filter(item => item.image); // Only keep items with images
 
       renderGallery(data);
