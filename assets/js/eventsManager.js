@@ -71,13 +71,13 @@ function renderCalendarAccordion(regularEvents) {
     row.className = 'accordion-row';
     
     row.innerHTML = `
-      <div class="accordion-header p-2 md:p-4 flex items-center">
+      <div class="accordion-header">
         <div class="accordion-date">
           <strong>${event.date.day}</strong>
           <div class="month-year">${event.date.monthYear}</div>
         </div>
-        <h3 class="accordion-title flex-1 px-2 md:px-4 text-base md:text-xl">${event.title}</h3>
-        <div class="accordion-icon shrink-0">
+        <h3 class="accordion-title">${event.title}</h3>
+        <div class="accordion-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </div>
       </div>

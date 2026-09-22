@@ -6,11 +6,10 @@
   <title>Projects - Department ECE</title>
     <link rel="icon" type="image/png" href="assets/favcon.png">
 <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <header class="site-header">
-    <div class="topbar w-full flex justify-between items-center px-4 md:px-8 max-w-7xl mx-auto">
+    <div class="topbar">
       <div class="logo">
         <div class="logo-img-wrapper">
           <img src="assets/ece-logo.png" alt="ECE PKD logo">
@@ -20,14 +19,9 @@
           <div class="dept-sub">Government Engineering College Palakkad</div>
         </div>
       </div>
-      <div class="flex items-center gap-4">
-        <div class="langs hidden md:block">Malayalam | English</div>
-        <button id="mobile-menu-btn" class="md:hidden p-2 focus:outline-none" aria-label="Menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-        </button>
-      </div>
+      <div class="langs">Malayalam | English</div>
     </div>
-    <nav class="main-nav hidden md:flex">
+    <nav class="main-nav">
       <a href="index.html">HOME</a>
       <div class="nav-item">
         <a class="nav-trigger" href="faculty.html">PEOPLE</a>
@@ -61,15 +55,12 @@
       <a href="gallery.html">GALLERY</a>
       <a href="reach-us.html">REACH US</a>
     </nav>
-    <div id="mobile-menu" class="hidden md:hidden bg-white w-full border-t border-gray-200">
-      <!-- JS will clone links here -->
-    </div>
   </header>
 
-  <main class="page px-4 md:px-8 max-w-7xl mx-auto">
+  <main class="page">
     <h1 style="font-size:54px; margin-bottom:16px;">Projects</h1>
 
-    <section class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_120px] gap-6 items-start">
+    <section class="project-page">
       <div class="project-main">
         <div class="project-feature">
           <div class="project-image">&lt;Photo of project&gt;</div>
@@ -78,7 +69,7 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-[1fr_0.8fr] gap-6">
+        <div class="project-grid">
           <div class="project-left-stack">
             <div class="project-card"></div>
             <div class="project-card"></div>
@@ -136,6 +127,5 @@
     </div>
         <div class="copyright">(c) 2026 - All rights reserved. Department of Electronics and Communication Engineering || Website Credits</div>
   </footer>
-  <script src="assets/js/nav.js"></script>
 </body>
 </html>
