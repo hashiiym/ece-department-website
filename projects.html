@@ -6,6 +6,9 @@
   <title>Projects - Department ECE</title>
     <link rel="icon" type="image/png" href="assets/favcon.png">
 <link rel="stylesheet" href="styles.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <header class="site-header">
@@ -63,46 +66,43 @@
     </nav>
   </header>
 
-  <main class="page">
-    <h1 style="font-size:54px; margin-bottom:16px;">Projects</h1>
+  
+  <main class="px-4 md:px-8 max-w-7xl mx-auto py-12">
+    <h1 class="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Projects</h1>
 
-    <section class="project-page">
-      <div class="project-main">
-        <div class="project-feature">
-          <div class="project-image">&lt;Photo of project&gt;</div>
-          <div class="project-caption-row">
-            <span>this will be for the &lt;title of project&gt;</span>
+    <section id="projects-container" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Main Content -->
+      <div class="lg:col-span-9 order-2 lg:order-1 flex flex-col gap-8 w-full">
+        <!-- Featured Project -->
+        <div id="featured-project" class="w-full bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hidden">
+          <div class="w-full h-[300px] md:h-[400px] bg-gray-50 flex items-center justify-center p-4">
+             <img id="featured-image" src="" alt="" class="w-full h-full object-contain">
+          </div>
+          <div class="p-6 md:p-8">
+            <h2 id="featured-title" class="text-2xl md:text-3xl font-bold text-gray-900 mb-4"></h2>
+            <p id="featured-desc" class="text-gray-600 leading-relaxed"></p>
           </div>
         </div>
 
-        <div class="project-grid">
-          <div class="project-left-stack">
-            <div class="project-card"></div>
-            <div class="project-card"></div>
-            <div class="project-bottom-row">
-              <div class="project-card"></div>
-              <div class="project-card"></div>
-            </div>
-          </div>
-          <div class="project-right-stack">
-            <div class="project-card tall"></div>
-          </div>
+        <!-- Project Grid -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+          <!-- Projects injected by JS -->
         </div>
       </div>
 
-      <aside class="project-filter">
-        <div class="project-filter-note">user can filter projects by academic year</div>
-        <div class="year-filter">
-          <span class="soft-chip">by year</span>
-          <span class="soft-chip active">2024</span>
-          <span class="soft-chip">2023</span>
-          <span class="soft-chip">2022</span>
-          <span class="soft-chip">2021</span>
-          <span class="soft-chip">2020</span>
+      <!-- Right Sidebar -->
+      <aside class="lg:col-span-3 order-1 lg:order-2 w-full">
+        <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 sticky top-24">
+          <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Filter by year</h3>
+          <div id="year-filter-container" class="flex flex-row lg:flex-col flex-wrap gap-2">
+            <!-- Year buttons injected by JS -->
+          </div>
         </div>
       </aside>
     </section>
   </main>
+
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -134,5 +134,6 @@
         <div class="copyright">(c) 2026 - All rights reserved. Department of Electronics and Communication Engineering || Website Credits</div>
   </footer>
   <script src="assets/js/nav.js"></script>
+  <script src="assets/js/projectsManager.js"></script>
 </body>
 </html>

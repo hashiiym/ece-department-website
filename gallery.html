@@ -6,6 +6,10 @@
   <title>Gallery - Department ECE</title>
     <link rel="icon" type="image/png" href="assets/favcon.png">
 <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <header class="site-header">
@@ -63,26 +67,28 @@
     </nav>
   </header>
 
-  <main class="page">
-    <h1 style="font-size:54px; margin-bottom:18px;">Gallery</h1>
+  
+  <main class="px-4 md:px-8 max-w-7xl mx-auto py-12">
+    <h1 class="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Gallery</h1>
 
-    <section class="gallery-showcase">
-      <div class="gallery-hero-frame">
-        <div class="gallery-dots" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+    <section id="gallery-container">
+      <!-- Hero Slider -->
+      <div class="w-full h-[400px] md:h-[500px] bg-gray-100 rounded-lg overflow-hidden mb-8 relative">
+        <div class="swiper gallery-swiper w-full h-full">
+          <div class="swiper-wrapper" id="gallery-slider-wrapper">
+            <!-- Swiper slides injected by JS -->
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
 
-      <div class="gallery-rows" id="gallery-rows" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
-          <!-- Images loaded dynamically from Sanity -->
+      <!-- Bottom Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="gallery-grid">
+        <!-- Grid items injected by JS -->
       </div>
-
-      <div class="gallery-note">photos and videos will here</div>
     </section>
   </main>
+
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -113,7 +119,8 @@
     </div>
         <div class="copyright">(c) 2026 - All rights reserved. Department of Electronics and Communication Engineering || Website Credits</div>
   </footer>
-  <script src="gallery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/galleryManager.js"></script>
   <script src="assets/js/nav.js"></script>
 </body>
 </html>
