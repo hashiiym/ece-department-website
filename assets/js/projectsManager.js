@@ -1,41 +1,47 @@
-const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQHEp9GcC_ATR5ShcMLnWmfbkhlzsQUYho4AWurey3qZEd062h7zjQG-rofF7MZqkg3bLJGmREb987E/pub?gid=1106157173&single=true&output=csv";
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT80ESm0kCmlEGGt8nOjRB0SE3YvYTFS-Jm4SsTSfJ3T-YX6tjn2wz08Q8TftUVS6SZHkNUxufQLNz7/pub?gid=0&single=true&output=csv";
 let allProjects = [];
 let activeYear = "All";
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (!document.getElementById('projects-container')) return;
+  const container = document.getElementById('projects-container');
+  if (!container) return;
 
-  const fetchUrl = SHEET_CSV_URL + "?t=" + new Date().getTime();
+  const separator = SHEET_CSV_URL.includes('?') ? '&' : '?';
+  const fetchUrl = SHEET_CSV_URL + separator + "t=" + new Date().getTime();
 
   Papa.parse(fetchUrl, {
     download: true,
     header: true,
     skipEmptyLines: true,
-    transformHeader: function(header) {
-      return header.trim();
-    },
+    transformHeader: (header) => header.trim().toLowerCase(),
     complete: function (results) {
-      allProjects = results.data.map(row => ({
-        id: row.id ? String(row.id).trim() : Math.random().toString(36).substr(2, 9),
-        year: row.year ? String(row.year).trim() : "Unknown",
-        title: row.title ? String(row.title).trim() : "Untitled Project",
-        description: row.description ? String(row.description).trim() : "",
-        circuitDiagram: row.circuitDiagram ? String(row.circuitDiagram).trim() : ""
-      })).filter(item => item.title !== "Untitled Project");
-
-      if (allProjects.length > 0) {
-        // Extract Unique Years
-        const uniqueYears = [...new Set(allProjects.map(p => p.year))].sort((a, b) => b.localeCompare(a));
-        
-        // Default to newest year
-        activeYear = uniqueYears[0];
-        
-        generateSidebarButtons(uniqueYears);
-        filterAndRender();
+      if (!results.data || results.data.length === 0) {
+        container.innerHTML = '<div class="p-4 bg-red-50 text-red-600 rounded-lg">Failed to load projects. Check CSV headers.</div>';
+        return;
       }
+
+      allProjects = results.data.filter(row => row.title && String(row.title).trim() !== "");
+
+      if (allProjects.length === 0) {
+        container.innerHTML = '<div class="p-4 bg-red-50 text-red-600 rounded-lg">Failed to load projects. Check CSV headers.</div>';
+        return;
+      }
+
+      // Extract Unique Years
+      const uniqueYears = [...new Set(allProjects.map(p => p.year).filter(Boolean))].sort((a, b) => String(b).localeCompare(String(a)));
+
+      // Unshift "All" to the beginning
+      uniqueYears.unshift("All");
+
+      // Default to "All"
+      activeYear = "All";
+
+      generateSidebarButtons(uniqueYears);
+      filterAndRender();
     },
     error: function (err) {
       console.error("Error fetching projects CSV:", err);
+      container.innerHTML = '<div class="p-4 bg-red-50 text-red-600 rounded-lg">Failed to load projects. Check CSV headers.</div>';
     }
   });
 });
@@ -48,10 +54,10 @@ function generateSidebarButtons(uniqueYears) {
 
   uniqueYears.forEach(year => {
     const btn = document.createElement('button');
-    // Default inactive classes
-    btn.className = 'px-4 py-2 text-sm font-semibold rounded-full border border-gray-200 text-gray-600 hover:bg-gray-100 transition-colors focus:outline-none year-btn text-left';
     btn.dataset.year = year;
     btn.textContent = year;
+    // The classes will be applied in filterAndRender
+    btn.className = 'px-4 py-2 text-sm font-semibold rounded-full border border-gray-200 text-gray-600 hover:bg-gray-100 transition-colors focus:outline-none year-btn text-left';
 
     btn.addEventListener('click', () => {
       activeYear = year;
@@ -73,8 +79,11 @@ function filterAndRender() {
   });
 
   // Filter the master CSV data array
-  const filteredData = allProjects.filter(project => project.year === activeYear);
-  
+  let filteredData = allProjects;
+  if (activeYear !== "All") {
+    filteredData = allProjects.filter(project => project.year === activeYear);
+  }
+
   // Call renderProjects
   renderProjects(filteredData);
 }
@@ -90,61 +99,50 @@ function renderProjects(data) {
     return;
   }
 
-  // Create flex column container for featured + grid
-  const wrapper = document.createElement('div');
-  wrapper.className = 'flex flex-col gap-8 w-full';
+  data.forEach(row => {
+    const card = document.createElement('div');
+    card.className = 'flex flex-col md:flex-row gap-6 p-6 bg-white rounded-xl shadow-sm border border-slate-100 mb-6';
 
-  // 1. Render Featured Project (First Item)
-  const featured = data[0];
-  const featuredCard = document.createElement('div');
-  featuredCard.className = 'w-full bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden';
-  
-  let featuredImgHtml = '';
-  if (featured.circuitDiagram) {
-    featuredImgHtml = `
-      <div class="w-full h-[300px] md:h-[400px] bg-gray-50 flex items-center justify-center p-4">
-         <img src="${featured.circuitDiagram}" alt="${featured.title}" class="w-full h-full object-contain">
+    let imageBlock = '';
+    if (row.image && String(row.image).trim() !== '') {
+      imageBlock = `
+        <div class="w-full md:w-1/3 shrink-0">
+          <img src="${String(row.image).trim()}" alt="${row.title || 'Project Image'}" class="w-full h-48 md:h-full object-cover rounded-lg">
+        </div>
+      `;
+    }
+
+    let yearBadge = '';
+    if (row.year && String(row.year).trim() !== '') {
+      yearBadge = `<span class="inline-block px-2.5 py-1 text-xs font-semibold bg-slate-100 text-slate-600 rounded-full w-max mb-3">${String(row.year).trim()}</span>`;
+    }
+
+    let descriptionHtml = '';
+    if (row.description && String(row.description).trim() !== '') {
+      descriptionHtml = `<p class="text-slate-600 mt-2">${String(row.description).trim()}</p>`;
+    }
+
+    let teamHtml = '';
+    if (row.teammembers && String(row.teammembers).trim() !== '') {
+      teamHtml = `<p class="mt-4 text-sm font-medium text-slate-800"><span class="text-slate-500">Team:</span> ${String(row.teammembers).trim()}</p>`;
+    }
+
+    let pdfHtml = '';
+    if (row.pdflink && String(row.pdflink).trim() !== '') {
+      pdfHtml = `<a href="${String(row.pdflink).trim()}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center w-max mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors">View Report PDF</a>`;
+    }
+
+    card.innerHTML = `
+      ${imageBlock}
+      <div class="flex-1 flex flex-col justify-center">
+        ${yearBadge}
+        <h3 class="text-2xl font-bold text-slate-900">${row.title || 'Untitled Project'}</h3>
+        ${descriptionHtml}
+        ${teamHtml}
+        ${pdfHtml}
       </div>
     `;
-  }
-  
-  featuredCard.innerHTML = `
-    ${featuredImgHtml}
-    <div class="p-6 md:p-8">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">${featured.title}</h2>
-      <p class="text-gray-600 leading-relaxed">${featured.description}</p>
-    </div>
-  `;
-  wrapper.appendChild(featuredCard);
 
-  // 2. Render Remaining Projects Grid
-  const remaining = data.slice(1);
-  if (remaining.length > 0) {
-    const grid = document.createElement('div');
-    grid.className = 'grid grid-cols-1 md:grid-cols-2 gap-6 w-full';
-
-    remaining.forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow';
-      
-      let imgHtml = '';
-      if (item.circuitDiagram) {
-        imgHtml = `
-          <div class="w-full h-48 bg-gray-50 rounded-lg overflow-hidden mb-4 p-2 flex items-center justify-center">
-            <img src="${item.circuitDiagram}" alt="${item.title}" class="w-full h-full object-contain">
-          </div>
-        `;
-      }
-
-      card.innerHTML = `
-        ${imgHtml}
-        <h3 class="text-xl font-bold text-gray-900 mb-2">${item.title}</h3>
-        <p class="text-gray-600 text-sm leading-relaxed flex-1">${item.description}</p>
-      `;
-      grid.appendChild(card);
-    });
-    wrapper.appendChild(grid);
-  }
-
-  container.appendChild(wrapper);
+    container.appendChild(card);
+  });
 }
