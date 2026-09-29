@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="academics.css">
   <link rel="icon" type="image/png" href="assets/favcon.png?v=2">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -89,9 +90,9 @@
          ============================================================ -->
     <section class="acad-hero acad-fade-in" id="overview">
       <div class="acad-hero-content">
-        <span class="acad-section-label">ACADEMIC PROGRAMMES</span>
+        <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">ACADEMIC PROGRAMMES</span>
         <h1>Academics</h1>
-        <p class="acad-hero-desc">
+        <p class="acad-hero-desc text-slate-600 leading-relaxed">
           Explore the academic programmes, curriculum, learning outcomes, laboratories and resources of the Department
           of Electronics and Communication Engineering.
         </p>
@@ -145,22 +146,18 @@
     </section>
 
     <!-- STAT STRIP -->
-    <div class="acad-stat-strip acad-fade-in">
-      <div class="acad-stat-card">
-        <span class="stat-value">B.Tech ECE</span>
-        <span class="stat-label">Undergraduate Programme</span>
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto acad-fade-in">
+      <div class="bg-white border border-slate-100 shadow-sm rounded-xl p-6 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
+        <span class="text-2xl font-bold text-slate-900 mb-1">B.Tech ECE</span>
+        <span class="text-sm text-slate-500">Undergraduate Programme</span>
       </div>
-      <div class="acad-stat-card">
-        <span class="stat-value">M.Tech IoT</span>
-        <span class="stat-label">Postgraduate Programme</span>
+      <div class="bg-white border border-slate-100 shadow-sm rounded-xl p-6 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
+        <span class="text-2xl font-bold text-slate-900 mb-1">M.Tech IoT</span>
+        <span class="text-sm text-slate-500">Postgraduate Programme</span>
       </div>
-      <div class="acad-stat-card">
-        <span class="stat-value">Est. 1999</span>
-        <span class="stat-label">B.Tech Started</span>
-      </div>
-      <div class="acad-stat-card">
-        <span class="stat-value">NBA</span>
-        <span class="stat-label">B.Tech Accredited</span>
+      <div class="bg-white border border-slate-100 shadow-sm rounded-xl p-6 flex flex-col items-center justify-center text-center hover:shadow-md transition-shadow">
+        <span class="text-2xl font-bold text-slate-900 mb-1">Est. 1999</span>
+        <span class="text-sm text-slate-500">B.Tech Started</span>
       </div>
     </div>
 
@@ -168,9 +165,9 @@
          B. PROGRAMMES OFFERED
          ============================================================ -->
     <section class="acad-section acad-fade-in" id="programmes">
-      <span class="acad-section-label">Programmes</span>
-      <h2 class="acad-section-title">Programmes Offered</h2>
-      <p class="acad-section-subtitle">The department offers undergraduate and postgraduate programmes affiliated to APJ
+      <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">Programmes</span>
+      <h2 class="acad-section-title text-slate-900 font-extrabold">Programmes Offered</h2>
+      <p class="acad-section-subtitle text-slate-600 leading-relaxed">The department offers undergraduate and postgraduate programmes affiliated to APJ
         Abdul Kalam Technological University (KTU).</p>
 
       <div class="acad-prog-grid">
@@ -194,10 +191,6 @@
             <div class="meta-row">
               <span class="meta-label">Affiliation</span>
               <span class="meta-value">APJ Abdul Kalam Technological University (KTU)</span>
-            </div>
-            <div class="meta-row">
-              <span class="meta-label">Accreditation</span>
-              <span class="meta-value">NBA Accredited</span>
             </div>
           </div>
           <a href="#curriculum" class="acad-prog-btn ug-btn">Explore B.Tech →</a>
@@ -239,32 +232,28 @@
          ============================================================ -->
     <section class="acad-section-alt acad-fade-in" id="glance">
       <div class="acad-inner">
-        <span class="acad-section-label">At a Glance</span>
-        <h2 class="acad-section-title">Programme at a Glance</h2>
-        <div class="acad-glance-grid">
-          <div class="acad-glance-item">
-            <span class="glance-value">B.Tech ECE</span>
-            <span class="glance-label">4 Years</span>
+        <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">At a Glance</span>
+        <h2 class="acad-section-title text-slate-900 font-extrabold">Programme at a Glance</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
+          <div class="bg-white border border-slate-100 shadow-sm rounded-xl p-4 text-center">
+            <span class="block text-xl font-bold text-slate-900 mb-1">B.Tech ECE</span>
+            <span class="block text-xs text-slate-500">4 Years</span>
           </div>
-          <div class="acad-glance-item">
-            <span class="glance-value">M.Tech IoT</span>
-            <span class="glance-label">2 Years</span>
+          <div class="bg-white border border-slate-100 shadow-sm rounded-xl p-4 text-center">
+            <span class="block text-xl font-bold text-slate-900 mb-1">M.Tech IoT</span>
+            <span class="block text-xs text-slate-500">2 Years</span>
           </div>
-          <div class="acad-glance-item">
-            <span class="glance-value">Est. 1999</span>
-            <span class="glance-label">B.Tech Established</span>
+          <div class="bg-white border border-slate-100 shadow-sm rounded-xl p-4 text-center">
+            <span class="block text-xl font-bold text-slate-900 mb-1">Est. 1999</span>
+            <span class="block text-xs text-slate-500">B.Tech Established</span>
           </div>
-          <div class="acad-glance-item">
-            <span class="glance-value">2024</span>
-            <span class="glance-label">M.Tech Introduced</span>
+          <div class="bg-white border border-slate-100 shadow-sm rounded-xl p-4 text-center">
+            <span class="block text-xl font-bold text-slate-900 mb-1">2024</span>
+            <span class="block text-xs text-slate-500">M.Tech Introduced</span>
           </div>
-          <div class="acad-glance-item">
-            <span class="glance-value">KTU</span>
-            <span class="glance-label">Affiliated since 2015</span>
-          </div>
-          <div class="acad-glance-item">
-            <span class="glance-value">NBA</span>
-            <span class="glance-label">B.Tech Accredited</span>
+          <div class="bg-white border border-slate-100 shadow-sm rounded-xl p-4 text-center">
+            <span class="block text-xl font-bold text-slate-900 mb-1">KTU</span>
+            <span class="block text-xs text-slate-500">Affiliated since 2015</span>
           </div>
         </div>
       </div>
@@ -274,14 +263,14 @@
          D. VISION & MISSION
          ============================================================ -->
     <section class="acad-section acad-fade-in" id="vision">
-      <span class="acad-section-label">Purpose</span>
-      <h2 class="acad-section-title">Vision &amp; Mission</h2>
+      <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">Purpose</span>
+      <h2 class="acad-section-title text-slate-900 font-extrabold">Vision &amp; Mission</h2>
 
-      <div class="acad-vm-grid">
-        <div class="acad-vm-card vision">
-          <h3>
-            <span class="vm-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white border border-slate-100 shadow-sm rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-slate-900 flex items-center gap-3 mb-4">
+            <span class="text-sky-600">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="12" r="6" />
@@ -290,15 +279,15 @@
             </span>
             Vision
           </h3>
-          <blockquote>
+          <blockquote class="text-slate-600 leading-relaxed italic border-l-4 border-sky-500 pl-4 py-1">
             "To mould the youth as excellent engineers in Electronics and Communication for the betterment of the
             society"
           </blockquote>
         </div>
-        <div class="acad-vm-card mission">
-          <h3>
-            <span class="vm-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        <div class="bg-white border border-slate-100 shadow-sm rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-slate-900 flex items-center gap-3 mb-4">
+            <span class="text-sky-600">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                 <polyline points="22 4 12 14.01 9 11.01" />
@@ -306,18 +295,15 @@
             </span>
             Mission
           </h3>
-          <ul class="acad-mission-list">
+          <ul class="mt-6 space-y-4 text-slate-600 leading-relaxed list-decimal list-inside ml-2">
             <li>
-              <span class="mission-num">1</span>
               <span>To impart theoretical foundations in Electronics &amp; Communication engineering and instill
                 practical expertise in the related domains and modern tool usage.</span>
             </li>
             <li>
-              <span class="mission-num">2</span>
               <span>To inculcate professional and ethical responsibility for teamwork.</span>
             </li>
             <li>
-              <span class="mission-num">3</span>
               <span>To enhance communication skills.</span>
             </li>
           </ul>
@@ -330,9 +316,9 @@
          ============================================================ -->
     <section class="acad-section-alt acad-fade-in" id="outcomes">
       <div class="acad-inner">
-        <span class="acad-section-label">Learning Outcomes</span>
-        <h2 class="acad-section-title">Programme Educational Objectives</h2>
-        <p class="acad-section-subtitle">Within a short span of time after graduation, the graduates shall:</p>
+        <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">Learning Outcomes</span>
+        <h2 class="acad-section-title text-slate-900 font-extrabold">Programme Educational Objectives</h2>
+        <p class="acad-section-subtitle text-slate-600 leading-relaxed">Within a short span of time after graduation, the graduates shall:</p>
 
         <div class="acad-peo-grid">
           <div class="acad-peo-card">
@@ -358,8 +344,8 @@
          F. PROGRAMME SPECIFIC OUTCOMES
          ============================================================ -->
     <section class="acad-section acad-fade-in" id="pso">
-      <span class="acad-section-label">Specific Outcomes</span>
-      <h2 class="acad-section-title">Programme Specific Outcomes</h2>
+      <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">Specific Outcomes</span>
+      <h2 class="acad-section-title text-slate-900 font-extrabold">Programme Specific Outcomes</h2>
 
       <div class="acad-pso-grid">
         <div class="acad-pso-card">
@@ -388,9 +374,9 @@
          ============================================================ -->
     <section class="acad-section-alt acad-fade-in" id="po">
       <div class="acad-inner">
-        <span class="acad-section-label">Programme Outcomes</span>
-        <h2 class="acad-section-title">Programme Outcomes</h2>
-        <p class="acad-section-subtitle">Engineering Graduates will be able to:</p>
+        <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">Programme Outcomes</span>
+        <h2 class="acad-section-title text-slate-900 font-extrabold">Programme Outcomes</h2>
+        <p class="acad-section-subtitle text-slate-600 leading-relaxed">Engineering Graduates will be able to:</p>
 
         <div class="acad-po-list">
 
@@ -492,9 +478,9 @@
          H. CORE LEARNING AREAS
          ============================================================ -->
     <section class="acad-section acad-fade-in" id="learning-areas">
-      <span class="acad-section-label">What We Teach</span>
-      <h2 class="acad-section-title">Core Learning Areas</h2>
-      <p class="acad-section-subtitle">Key subject areas covered in the ECE curriculum.</p>
+      <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">What We Teach</span>
+      <h2 class="acad-section-title text-slate-900 font-extrabold">Core Learning Areas</h2>
+      <p class="acad-section-subtitle text-slate-600 leading-relaxed">Key subject areas covered in the ECE curriculum.</p>
 
       <div class="acad-areas-grid">
         <div class="acad-area-card">
@@ -621,9 +607,9 @@
          ============================================================ -->
     <section class="acad-section-alt acad-fade-in" id="labs">
       <div class="acad-inner">
-        <span class="acad-section-label">Facilities</span>
-        <h2 class="acad-section-title">Laboratories &amp; Learning Facilities</h2>
-        <p class="acad-section-subtitle">The department maintains well-equipped laboratories for hands-on learning and
+        <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">Facilities</span>
+        <h2 class="acad-section-title text-slate-900 font-extrabold">Laboratories &amp; Learning Facilities</h2>
+        <p class="acad-section-subtitle text-slate-600 leading-relaxed">The department maintains well-equipped laboratories for hands-on learning and
           project development.</p>
 
         <div class="acad-labs-grid">
@@ -864,9 +850,9 @@
          J. CURRICULUM & SYLLABUS
          ============================================================ -->
     <section class="acad-section acad-fade-in" id="curriculum">
-      <span class="acad-section-label">Curriculum</span>
-      <h2 class="acad-section-title">Curriculum &amp; Syllabus</h2>
-      <p class="acad-section-subtitle">Official curriculum, syllabus documents and university regulations.</p>
+      <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">Curriculum</span>
+      <h2 class="acad-section-title text-slate-900 font-extrabold">Curriculum &amp; Syllabus</h2>
+      <p class="acad-section-subtitle text-slate-600 leading-relaxed">Official curriculum, syllabus documents and university regulations.</p>
 
       <div class="acad-curriculum-grid">
         <div class="acad-curriculum-card">
@@ -936,9 +922,9 @@
          ============================================================ -->
     <section class="acad-section-alt acad-fade-in" id="resources">
       <div class="acad-inner">
-        <span class="acad-section-label">Downloads</span>
-        <h2 class="acad-section-title">Academic Resources</h2>
-        <p class="acad-section-subtitle">Official department documents, faculty and student lists, and university links.
+        <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">Downloads</span>
+        <h2 class="acad-section-title text-slate-900 font-extrabold">Academic Resources</h2>
+        <p class="acad-section-subtitle text-slate-600 leading-relaxed">Official department documents, faculty and student lists, and university links.
         </p>
 
         <div class="acad-resources-grid">
@@ -1170,9 +1156,9 @@
          L. ACADEMIC TIMELINE
          ============================================================ -->
     <section class="acad-section acad-fade-in" id="timeline">
-      <span class="acad-section-label">History</span>
-      <h2 class="acad-section-title">Academic Journey</h2>
-      <p class="acad-section-subtitle">Key milestones of the Department of Electronics and Communication Engineering.
+      <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">History</span>
+      <h2 class="acad-section-title text-slate-900 font-extrabold">Academic Journey</h2>
+      <p class="acad-section-subtitle text-slate-600 leading-relaxed">Key milestones of the Department of Electronics and Communication Engineering.
       </p>
 
       <div class="acad-timeline">
@@ -1197,9 +1183,9 @@
          ============================================================ -->
     <section class="acad-section-alt acad-fade-in" id="beyond">
       <div class="acad-inner">
-        <span class="acad-section-label">Student Life</span>
-        <h2 class="acad-section-title">Beyond the Classroom</h2>
-        <p class="acad-section-subtitle">Academic and co-curricular development activities in the ECE Department.</p>
+        <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">Student Life</span>
+        <h2 class="acad-section-title text-slate-900 font-extrabold">Beyond the Classroom</h2>
+        <p class="acad-section-subtitle text-slate-600 leading-relaxed">Academic and co-curricular development activities in the ECE Department.</p>
 
         <div class="acad-beyond-grid">
           <div class="acad-beyond-item">
@@ -1265,8 +1251,8 @@
          N. QUICK ACCESS
          ============================================================ -->
     <section class="acad-section acad-fade-in" id="quick-access">
-      <span class="acad-section-label">Navigate</span>
-      <h2 class="acad-section-title">Quick Access</h2>
+      <span class="acad-section-label text-sm font-bold text-sky-600 uppercase tracking-wider mb-2 block">Navigate</span>
+      <h2 class="acad-section-title text-slate-900 font-extrabold">Quick Access</h2>
 
       <div class="acad-quick-grid">
         <a href="#programmes" class="acad-quick-card">
