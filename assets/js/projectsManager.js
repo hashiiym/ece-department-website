@@ -119,7 +119,7 @@ function renderProjects(data) {
 
     let descriptionHtml = '';
     if (row.description && String(row.description).trim() !== '') {
-      descriptionHtml = `<p class="text-slate-600 mt-2">${String(row.description).trim()}</p>`;
+      descriptionHtml = `<p class="text-slate-600 mt-2 text-justify leading-relaxed break-words text-sm md:text-base">${String(row.description).trim()}</p>`;
     }
 
     let teamHtml = '';

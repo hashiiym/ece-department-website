@@ -401,9 +401,15 @@ li {
 .about-grid,
 .hod-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 190px;
+  grid-template-columns: 1fr;
   gap: 38px;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr) 190px;
+  }
 }
 
 .about-copy {
@@ -411,7 +417,13 @@ li {
 }
 
 .about-copy p {
-  margin: 0 0 0 34px;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .about-copy p {
+    margin: 0 0 0 34px;
+  }
 }
 
 .nba-badge {
@@ -420,8 +432,13 @@ li {
 }
 
 .hod-grid {
-  grid-template-columns: 280px minmax(0, 1fr);
   align-items: start;
+}
+
+@media (min-width: 768px) {
+  .hod-grid {
+    grid-template-columns: 280px minmax(0, 1fr);
+  }
 }
 
 .hod-photo {
@@ -581,8 +598,20 @@ li {
 
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .news-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .news-card {
@@ -596,7 +625,13 @@ li {
 }
 
 .news-card.wide {
-  grid-column: span 2;
+  grid-column: span 1;
+}
+
+@media (min-width: 640px) {
+  .news-card.wide {
+    grid-column: span 2;
+  }
 }
 
 .news-card .date-badge {
