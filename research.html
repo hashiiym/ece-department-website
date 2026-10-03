@@ -4,8 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Research - Department ECE</title>
-    <link rel="icon" type="image/png" href="assets/favcon.png?v=2">
-<link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assets/favcon.png?v=2">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <header class="site-header">
@@ -21,7 +22,6 @@
       </div>
       
       <div class="header-actions">
-        <div class="langs">മലയാളം&nbsp;&nbsp; English</div>
         <button class="mobile-menu-btn" aria-label="Menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
@@ -64,57 +64,41 @@
   </header>
 
   <main class="page">
-    <h1 class="page-title">Research</h1>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-8">Research</h1>
 
-    <div class="tab-row">
-      <span class="tab-pill active">Publications</span>
-      <span class="tab-pill">international journals</span>
-      <span class="tab-pill">Patents</span>
+      <div class="flex flex-wrap gap-2 mb-10 border-b border-slate-100 pb-4">
+        <button class="px-5 py-2 rounded-full bg-slate-900 text-white text-sm font-medium transition-colors">Publications</button>
+        <button class="px-5 py-2 rounded-full bg-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-900 text-sm font-medium transition-colors">international journals</button>
+        <button class="px-5 py-2 rounded-full bg-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-900 text-sm font-medium transition-colors">Patents</button>
+      </div>
+
+      <section class="research-list">
+        <div class="p-6 md:p-8 mb-6 rounded-2xl border border-slate-200 bg-white">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
+            <span class="text-xs font-bold text-sky-600 uppercase tracking-widest">International Journal papers with impact factor</span>
+            <span class="text-xs font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">2014-2015 • In this college • 04/10/2014</span>
+          </div>
+          <p class="text-slate-700 leading-relaxed text-base md:text-lg max-w-4xl">A. R. Jayan and P. C. Pandey, Automated modification of consonant-vowel ratio of stops for improving speech intelligibility, Int. J. Speech Technol., vol. 18, pp. 113-130, 2015. Epub 2014 Oct., DOI: 10.1007/s10772-014-9254-4</p>
+        </div>
+
+        <div class="p-6 md:p-8 mb-6 rounded-2xl border border-slate-200 bg-white">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
+            <span class="text-xs font-bold text-sky-600 uppercase tracking-widest">International Conferences</span>
+            <span class="text-xs font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">2008-2009 • Outside this college • 19/04/2019</span>
+          </div>
+          <p class="text-slate-700 leading-relaxed text-base md:text-lg max-w-4xl">A. R. Jayan and P. C. Pandey, Detection of stop landmarks using Gaussian mixture modeling of speech spectrum, Proc. IEEE Int. Conf. Acoustics, Speech and Signal Processing 2009 (IEEE/ICASSP 2009), Taipei, Taiwan, pp. 4681-4684.</p>
+        </div>
+
+        <div class="p-6 md:p-8 mb-6 rounded-2xl border border-slate-200 bg-white">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
+            <span class="text-xs font-bold text-sky-600 uppercase tracking-widest">International Conferences</span>
+            <span class="text-xs font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">2006-2007 • In this college • 02/09/2019</span>
+          </div>
+          <p class="text-slate-700 leading-relaxed text-base md:text-lg max-w-4xl">A. R. Jayan and P. C. Pandey, Detection of stop landmarks using Gaussian mixture modeling of speech spectrum, Proc. IEEE Int. Conf. Acoustics, Speech and Signal Processing 2009 (IEEE/ICASSP 2009), Taipei, Taiwan, pp. 4681-4684.</p>
+        </div>
+      </section>
     </div>
-
-    <section class="research-list">
-      <article class="research-card">
-        <div>
-          <div class="research-meta">
-            <span class="meta-pill">International Journal papers with impact factor</span>
-            <span class="meta-pill">04/10/2014</span>
-          </div>
-          <p>A. R. Jayan and P. C. Pandey, Automated modification of consonant-vowel ratio of stops for improving speech intelligibility, Int. J. Speech Technol., vol. 18, pp. 113-130, 2015. Epub 2014 Oct., DOI: 10.1007/s10772-014-9254-4</p>
-        </div>
-        <div class="year-tag">
-          <strong>In this college</strong>
-          <span>2014-2015</span>
-        </div>
-      </article>
-
-      <article class="research-card">
-        <div>
-          <div class="research-meta">
-            <span class="meta-pill">International Conferences</span>
-            <span class="meta-pill">19/04/2019</span>
-          </div>
-          <p>A. R. Jayan and P. C. Pandey, Detection of stop landmarks using Gaussian mixture modeling of speech spectrum, Proc. IEEE Int. Conf. Acoustics, Speech and Signal Processing 2009 (IEEE/ICASSP 2009), Taipei, Taiwan, pp. 4681-4684.</p>
-        </div>
-        <div class="year-tag">
-          <strong>Outside this college</strong>
-          <span>2008-2009</span>
-        </div>
-      </article>
-
-      <article class="research-card">
-        <div>
-          <div class="research-meta">
-            <span class="meta-pill">International Conferences</span>
-            <span class="meta-pill">02/09/2019</span>
-          </div>
-          <p>A. R. Jayan and P. C. Pandey, Detection of stop landmarks using Gaussian mixture modeling of speech spectrum, Proc. IEEE Int. Conf. Acoustics, Speech and Signal Processing 2009 (IEEE/ICASSP 2009), Taipei, Taiwan, pp. 4681-4684.</p>
-        </div>
-        <div class="year-tag">
-          <strong>In this college</strong>
-          <span>2006-2007</span>
-        </div>
-      </article>
-    </section>
   </main>
 
   <footer class="site-footer">

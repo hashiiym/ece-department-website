@@ -183,13 +183,6 @@ a {
   margin-top: 2px;
 }
 
-.langs {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  color: #6b7280;
-  margin-left: auto;
-}
 
 .main-nav {
   background: transparent;
@@ -1494,13 +1487,6 @@ a {
   margin-top: 2px;
 }
 
-.langs {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  color: #6b7280;
-  margin-left: auto;
-}
 
 .main-nav {
   background: transparent;
@@ -3100,9 +3086,6 @@ li {
     display: block;
   }
 
-  .langs {
-    display: none;
-  }
 }
 
 img {
