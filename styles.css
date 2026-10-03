@@ -458,6 +458,7 @@ li {
   margin-top: 24px;
   text-align: right;
   font-size: 20px;
+  font-weight: bold;
 }
 
 .quote-block {
@@ -2884,6 +2885,8 @@ li {
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.3s ease;
   background: #f9fafb;
+  padding: 0;
+  border-top: none;
 }
 
 .accordion-row.open .accordion-content {
@@ -2899,6 +2902,7 @@ li {
   padding: 0 16px;
   color: #4b5563;
   line-height: 1.6;
+  min-height: 0;
 }
 
 .accordion-row.open .accordion-inner {
@@ -3010,6 +3014,7 @@ li {
 @media (min-width: 768px) {
   .accordion-header {
     grid-template-columns: 80px minmax(0, 1fr) 40px;
+    padding: 24px;
   }
 }
 
