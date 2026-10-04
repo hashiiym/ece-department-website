@@ -6,6 +6,8 @@
   <title>Achievements - Department ECE</title>
     <link rel="icon" type="image/png" href="assets/favcon.png?v=2">
 <link rel="stylesheet" href="styles.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -63,146 +65,21 @@
   </header>
 
   <main class="page">
-    <section class="accordion-container" style="margin-bottom: 2rem;">
-      <h1 class="page-title">Achievements</h1>
-    </section>
+    <div class="max-w-4xl mx-auto px-4 py-12 md:py-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-12">Achievements</h1>
 
-    <section class="content accordion-container">
-      <details class="accordion-panel" open>
-        <summary>Faculty Achievements</summary>
-        <div class="accordion-content">
-          <ul class="achievement-list">
-            <li><strong>Prof. Shamla B:</strong> First runner-up in Badminton-women's doubles (State Level Civil Service Meet). First in Javelin, second in Chess (District Level).</li>
-            <li><strong>Prof. Gayathri A:</strong> Active SPOC for SWAYAM-NPTEL local chapter.</li>
-            <li><strong>Mr. Mahesh C:</strong> Winner of 100m &amp; 200m track events (District Level Civil Service Meet). Second in 100m, third in 200m (National Veterans Meet, Bangalore). Winner of 100m &amp; 60m (Pacific Meet, Goa). Second in 100m &amp; 200m (South India Masters Meet, Thalassery).</li>
-            <li><strong>Dr. Anitha R:</strong> Awarded Australian patent for 'Inertial Measurement Unit for Wearable Continuous Human Motion Information System'.</li>
-            <li><strong>Dr. Swapna G:</strong> Awarded PhD in Biomedical Signal Processing from Amrita Vishwa Vidyapeetham (Sept 2022).</li>
-            <li><strong>Smt. Bindu P (HoD ECE):</strong> Received PhD in Electronics &amp; Communication from CUSAT (2019).</li>
-            <li><strong>Dr. AR Jayan:</strong> Secured a US PATENT based on PhD work at IIT Bombay.</li>
-            <li><strong>Prof. R. Jayadevan:</strong> Awarded Ph.D from University of Calicut (Dec 2021).</li>
-            <li><strong>Sri Anoop CS:</strong> Won Best Paper Award at IEEE Conference ICICICT 2019.</li>
-            <li><strong>Smt. Nirmala KV:</strong> Secured Second Rank in MTech (Signal Processing) Exam, MG University (Nov 2016).</li>
-          </ul>
-        </div>
-      </details>
+      <div class="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-2xl font-extrabold text-slate-900 mb-6 border-b border-slate-100 pb-4">Student &amp; Alumni Achievements</h2>
+        
+        <div id="student-achievements-container" class="space-y-6"></div>
+      </div>
 
-      <details class="accordion-panel">
-        <summary>Student &amp; Alumni Achievements</summary>
-        <div class="accordion-content">
-          <ul class="achievement-list">
-            <li><strong>Outstanding NPTEL Achievements</strong>
-              <ul class="achievement-sublist">
-                <li>Sangeetha C N (2021–25 batch) earned an Elite Silver Certificate for completing <em>Internet of Things</em>.</li>
-                <li>Sangeetha C N earned an Elite Silver Certificate for placing in the Top 1% in <em>Introduction to Internet of Things</em>.</li>
-                <li>K S Syamkrishna (2021–25 batch) earned an Elite Silver Certificate for completing <em>Internet of Things</em>.</li>
-                <li>K S Syamkrishna earned an Elite Silver Certificate for placing in the Top 5% in <em>Introduction to Internet of Things</em>.</li>
-                <li>Adithya Mohan S (2022–26 batch) received an Elite Golden Certificate for <em>Introduction to Internet of Things</em>.</li>
-                <li>Surya (2022–26 batch) received an Elite Silver Certificate for <em>Introduction to Internet of Things</em>.</li>
-              </ul>
-            </li>
-            <li><strong>Innovation &amp; Competitions</strong>
-              <ul class="achievement-sublist">
-                <li>Sourav K C and Chithira M (2019–23 batch) won the State Level Young Innovators Programme (YIP 4.0) in the Fisheries theme, organized by K-DISC.</li>
-                <li>Naveen Menon, Hridya T V, Sruthi, and Adwaith Pushparajan (2020–24 batch) secured 2nd place among 112 teams at the District Level Ideathon during the Freedom Fest Seminar on E-Governance, organized by the Government of Kerala.</li>
-                <li>Rohith K., Jaison Joshi, and Sourav (S7 ECE) participated in the SERB INAE Conclave at IIT Kanpur in November 2022.</li>
-              </ul>
-            </li>
-            <li><strong>Youth Leadership &amp; Debating</strong>
-              <ul class="achievement-sublist">
-                <li>Anjana B (2017–21 batch) was a District Level Winner and State Level Participant in the 2021 National Youth Parliament.</li>
-                <li>Anjana B was selected for the Navakeralam Yuvakeralam Student Meet and interaction with the Kerala Chief Minister.</li>
-                <li>Anjana B was selected as a delegate for the International Model United Nations (IMUN) Online Conference.</li>
-                <li>Anjana B won 1st place in the statewide “Talk Matters” speech competition.</li>
-                <li>Anjana B won 2nd place in the statewide “Speak Out” Just-A-Minute (JAM) competition.</li>
-              </ul>
-            </li>
-            <li><strong>National &amp; International Participation</strong>
-              <ul class="achievement-sublist">
-                <li>Nearly 121 students participated in 48 national and international events over the last three academic years.</li>
-              </ul>
-            </li>
-            <li><strong>Women's Handball</strong>
-              <ul class="achievement-sublist">
-                <li>Aparna V Shenoy and Shifanath T S (2023–27 batch), along with Neethu N (2020–24 batch), won the KTU Interzone Women's Handball Tournament.</li>
-                <li>The same team won the KTU E-Zone Women's Handball Tournament.</li>
-                <li>The department finished runner-up in the 2022 APJKTU E-Zone Intercollegiate Women's Handball Tournament.</li>
-              </ul>
-            </li>
-            <li><strong>Women's Kho-Kho</strong>
-              <ul class="achievement-sublist">
-                <li>Neethu N, G Ragendu, Azmi Nazar T, and Anagha Suresh K V (2020–24 batch) won the KTU Interzone Women's Kho-Kho Tournament.</li>
-                <li>The same team won the KTU E-Zone Women's Kho-Kho Tournament.</li>
-                <li>Neethu N placed 3rd in the KTU E-Zone Kho-Kho Tournament.</li>
-              </ul>
-            </li>
-            <li><strong>Men's Handball</strong>
-              <ul class="achievement-sublist">
-                <li>Roshan Raj and Athul Krishnan A P (2021–25 batch), along with Ajmal J (2022–26 batch), finished as runners-up in the KTU E-Zone Handball Tournament.</li>
-                <li>Neethu N (2020–24 batch) secured 2nd place in the KTU E-Zone Handball Tournament.</li>
-                <li>The department finished runner-up in the 2022 APJKTU E-Zone Intercollegiate Men's Handball Tournament.</li>
-              </ul>
-            </li>
-            <li><strong>Other Sports Honors</strong>
-              <ul class="achievement-sublist">
-                <li>Shad Muhsin K. (S7 ECE) represented the APJKTU University Handball Team in the 2021–22 and 2022–23 seasons.</li>
-                <li>Athul Krishnan A P (2021–25 batch) and Akshay Kumar (2022–26 batch) placed 2nd runners-up in the Men's KTU E-Zone Volleyball Tournament.</li>
-                <li>Niranjana M (2023–27 batch) was runner-up in Interzone Women's Karate.</li>
-              </ul>
-            </li>
-            <li><strong>Placement Statistics</strong>
-              <ul class="achievement-sublist">
-                <li>59% of the 2019–23 batch secured placements.</li>
-                <li>The batch achieved an average annual package of ₹2.7 LPA.</li>
-              </ul>
-            </li>
-            <li><strong>Multiple Placement Milestone</strong>
-              <ul class="achievement-sublist">
-                <li>Ashwathy G R (2018–22 batch, B.Tech Honours) secured placements at five companies: Bosch, TCS, Capgemini, Cognizant, and Travancore Analytics.</li>
-              </ul>
-            </li>
-            <li><strong>Scholarships</strong>
-              <ul class="achievement-sublist">
-                <li>Niranjan (2022–26 batch) received a Siemens Scholarship.</li>
-                <li>Amar Sonu (2020–24 batch) received a Siemens Scholarship.</li>
-                <li>Adwaith Pushparajan (2020–24 batch) received a Siemens Scholarship.</li>
-                <li>Vishnu P U (2022–26 batch) received the Sasneham Scholarship.</li>
-                <li>Sasneham is funded by SASNEHAM, an alumni welfare association formed by the 2009–13 B.Tech ECE batch of GEC Palakkad; since 2019, it has provided annual aid to two students.</li>
-              </ul>
-            </li>
-            <li><strong>Projects &amp; Student Entrepreneurship</strong>
-              <ul class="achievement-sublist">
-                <li>Departmental students developed the Vingyan mobile app to provide academic resources, including semester study materials, core textbooks, and GATE preparation modules.</li>
-                <li>Rohit K (2019–23 batch) founded R K Innovations to design and fabricate innovative products addressing contemporary problems with constructive solutions.</li>
-              </ul>
-            </li>
-            <li><strong>GATE All India Ranks</strong>
-              <ul class="achievement-sublist">
-                <li>Sooshnivethy S.S (2014 ECE batch) secured AIR 10 in GATE 2015 with a 100% score.</li>
-                <li>Athira P B (2016–20 batch) secured AIR 129 in GATE 2022.</li>
-                <li>Sruthi Ramachandran (2017–21 batch) secured AIR 924 in GATE 2022.</li>
-              </ul>
-            </li>
-            <li><strong>Sastra Robotics</strong>
-              <ul class="achievement-sublist">
-                <li>The GEC Sreekrishnapuram alumni startup was co-founded by alumnus Aronin Ponnappan (2012 ECE batch).</li>
-                <li>The startup won the Innotech award from Kairaly TV.</li>
-                <li>The startup signed a contract to supply robots to aircraft manufacturer Lockheed Martin.</li>
-              </ul>
-            </li>
-            <li><strong>Advanced Research</strong>
-              <ul class="achievement-sublist">
-                <li>Achu Wilson (2012 ECE batch) enrolled at the Massachusetts Institute of Technology (MIT), USA, as a Graduate Research Assistant.</li>
-              </ul>
-            </li>
-            <li><strong>State Recognition</strong>
-              <ul class="achievement-sublist">
-                <li>Lepeesh Parat (2005 ECE batch) was nominated by the Kerala Youth Welfare Board for the Swamy Vivekananda Memorial Youth Award in the Entrepreneurship category for 2014 (January 12, 2015).</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </details>
-    </section>
+      <div class="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-2xl font-extrabold text-slate-900 mb-6 border-b border-slate-100 pb-4">Faculty Achievements</h2>
+        
+        <ul id="faculty-achievements-container" class="list-disc ml-6 space-y-3 text-slate-600 text-base md:text-lg leading-relaxed"></ul>
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -235,5 +112,46 @@
         <div class="copyright">(c) 2026 - All rights reserved. Department of Electronics and Communication Engineering || Website Credits</div>
   </footer>
   <script src="assets/js/nav.js"></script>
+
+<script>
+  // The published Google Sheet CSV link
+  const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8byPl0a5Mp6h-Y2eIGvilJ9RcaAdRBxtsqW-6l6ONr9HnmA3lvka1uOOCJwTrrgRprP1oChRom-iX/pub?gid=1847457553&single=true&output=csv";
+
+  Papa.parse(SHEET_CSV_URL, {
+    download: true,
+    header: true,
+    complete: function(results) {
+      const data = results.data;
+      
+      // Containers
+      const studentContainer = document.getElementById('student-achievements-container');
+      const facultyContainer = document.getElementById('faculty-achievements-container');
+      
+      // Group Students by Category
+      const studentData = data.filter(item => item.Type === "Student & Alumni" && item.Name);
+      const categories = [...new Set(studentData.map(item => item.Category))];
+      
+      categories.forEach(category => {
+        // Create Category Header
+        let catHTML = `<h3 class="text-lg font-bold text-slate-900 mt-6 mb-3">${category}</h3><ul class="list-disc ml-6 space-y-3 text-slate-600 text-base md:text-lg leading-relaxed">`;
+        
+        // Add items for this category
+        const items = studentData.filter(i => i.Category === category);
+        items.forEach(item => {
+          catHTML += `<li><strong class="text-slate-900">${item.Name}:</strong> ${item.Achievement}</li>`;
+        });
+        
+        catHTML += `</ul>`;
+        studentContainer.innerHTML += catHTML;
+      });
+
+      // Populate Faculty
+      const facultyData = data.filter(item => item.Type === "Faculty" && item.Name);
+      facultyData.forEach(item => {
+        facultyContainer.innerHTML += `<li><strong class="text-slate-900">${item.Name}:</strong> ${item.Achievement}</li>`;
+      });
+    }
+  });
+</script>
 </body>
 </html>
