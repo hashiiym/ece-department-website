@@ -10,7 +10,7 @@
 <body>
   <header class="site-header">
     <div class="topbar">
-      <a href="index.html" class="flex items-center gap-3 cursor-pointer logo">
+      <a href="index.html" class="flex items-center gap-3 cursor-pointer logo no-underline hover:no-underline">
         <div class="logo-img-wrapper">
           <img src="assets/ece-logo.png" alt="ECE PKD logo">
         </div>
@@ -61,31 +61,31 @@
   </header>
 
   <main class="page">
-    <section class="people-hero">
-      <div class="hero-box">
-        <div class="eyebrow-text">Career Outcomes</div>
-        <h1>Placements</h1>
-        <p>Students prepare for careers in core electronics, software, analytics, embedded systems, and higher studies through technical training, project exposure, and institution-wide placement support.</p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12 items-start">
+      <div>
+        <span class="block text-xs font-bold text-sky-600 uppercase tracking-wider mb-3">Career Outcomes</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Placements</h1>
+        <p class="text-slate-600 text-base md:text-lg leading-relaxed text-justify">Students prepare for careers in core electronics, software, analytics, embedded systems, and higher studies through technical training, project exposure, and institution-wide placement support.</p>
       </div>
-      <div class="hero-side">
-        <h2 style="margin-bottom:18px;">Preparation Track</h2>
-        <ul class="bullets" style="margin-left:0;">
+      <div class="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8">
+        <h2 class="text-2xl font-bold text-slate-900 mb-6 border-b border-slate-100 pb-4">Preparation Track</h2>
+        <ul class="list-disc ml-6 space-y-3 text-slate-600 text-base md:text-lg leading-relaxed">
           <li>Aptitude and interview readiness</li>
           <li>Project and portfolio strengthening</li>
           <li>Technical communication and teamwork</li>
           <li>Guidance for internships and higher studies</li>
         </ul>
       </div>
-    </section>
+    </div>
 
-    <section class="wide-stack" style="padding: 32px; background: #f3f4f6; border-radius: 8px; margin-top: 24px;">
-      <ul style="list-style-type: disc; list-style-position: inside; margin: 0; padding: 0; color: #374151; font-size: 1.125rem;">
-        <li style="margin-bottom: 8px;">2024 Recent graduating cohort view</li>
-        <li style="margin-bottom: 8px;">Core + IT Multiple role pathways</li>
-        <li style="margin-bottom: 8px;">CRT Career readiness training support</li>
+    <div class="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 mb-12">
+      <ul class="list-disc ml-6 space-y-3 text-slate-600 text-base md:text-lg leading-relaxed">
+        <li>2024 Recent graduating cohort view</li>
+        <li>Core + IT Multiple role pathways</li>
+        <li>CRT Career readiness training support</li>
         <li>Alumni Peer guidance and motivation</li>
       </ul>
-    </section>
+    </div>
 
     <section style="margin-top: 48px;">
       <h2 class="section-title">Recent Placement Reports</h2>
@@ -106,6 +106,10 @@
     <section style="margin-top: 48px;">
       <h2 class="section-title">Placement Posters</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-top: 16px;">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <img src="assets/placements/placement-poster-2027.jpeg" alt="Placement 2027" style="width: 100%; border-radius: 8px; border: 1px solid #e5e7eb; background: #e5e7eb;">
+          <span style="font-size: 0.875rem; color: #6b7280; text-align: center;">Placement 2027</span>
+        </div>
         <div style="display: flex; flex-direction: column; gap: 8px;">
           <img src="assets/placements/placement-poster-2025.png" alt="Placement 2025" style="width: 100%; border-radius: 8px; border: 1px solid #e5e7eb; background: #e5e7eb;">
           <span style="font-size: 0.875rem; color: #6b7280; text-align: center;">Placement 2025</span>
