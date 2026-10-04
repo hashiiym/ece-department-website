@@ -16,16 +16,14 @@
 <body>
   <header class="site-header">
     <div class="topbar">
-      <div class="logo">
+      <a href="index.html" class="flex items-center gap-3 cursor-pointer logo">
         <div class="logo-img-wrapper">
           <img src="assets/ece-logo.png" alt="ECE PKD logo">
         </div>
         <div class="dept">
           <div class="dept-title">Department of<br>Electronics and Communication Engineering</div>
           <div class="dept-sub">Government Engineering College Palakkad</div>
-        </div>
-      </div>
-
+        </div></a>
       <div class="header-actions">
         <button class="mobile-menu-btn" aria-label="Menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,13 +70,15 @@
 
   <!-- SECONDARY ACADEMIC NAV -->
   <nav class="acad-subnav" id="acad-subnav">
-    <div class="acad-subnav-inner">
+    <div class="overflow-x-auto whitespace-nowrap pb-2 hide-scrollbar">
+      <div class="acad-subnav-inner">
       <a href="#overview" class="active">Overview</a>
       <a href="#programmes">Programmes</a>
       <a href="#outcomes">Outcomes</a>
       <a href="#labs">Laboratories</a>
       <a href="#curriculum">Curriculum</a>
       <a href="#resources">Resources</a>
+    </div>
     </div>
   </nav>
 
@@ -102,14 +102,7 @@
       </div>
       <div class="acad-hero-visual">
         <div class="acad-circuit-pattern">
-          <video 
-            src="assets/videos/electro.mp4" 
-            autoplay 
-            loop 
-            muted 
-            playsinline 
-            class="w-full h-full object-cover">
-          </video>
+          <video src="assets/videos/electro.mp4" class="w-full h-auto aspect-video md:h-[400px] object-cover rounded-2xl shadow-lg border border-slate-100" autoplay loop muted playsinline></video>
         </div>
       </div>
     </section>
@@ -1383,6 +1376,7 @@
       }
     })();
   </script>
+<script src="assets/js/nav.js"></script>
 </body>
 
 </html>
