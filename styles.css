@@ -111,11 +111,11 @@ a {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid #e5e7eb;
+  
   width: 100%;
   margin: 0;
   padding: 0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  
 }
 
 .topbar {
@@ -1417,11 +1417,11 @@ a {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid #e5e7eb;
+  
   width: 100%;
   margin: 0;
   padding: 0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  
 }
 
 .topbar {
