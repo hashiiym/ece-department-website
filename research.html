@@ -49,6 +49,7 @@
           <a href="projects.html" class="block px-4 py-2 uppercase tracking-wider text-xs font-bold text-slate-600 hover:text-sky-600 hover:bg-slate-50 transition-colors">Projects</a>
           <a href="research.html" class="block px-4 py-2 uppercase tracking-wider text-xs font-bold text-slate-600 hover:text-sky-600 hover:bg-slate-50 transition-colors">Research</a>
           <a href="achievements.html" class="block px-4 py-2 uppercase tracking-wider text-xs font-bold text-slate-600 hover:text-sky-600 hover:bg-slate-50 transition-colors">Achievements</a>
+          <a href="magazine.html" class="block px-4 py-2 uppercase tracking-wider text-xs font-bold text-slate-600 hover:text-sky-600 hover:bg-slate-50 transition-colors">Magazines & Newsletters</a>
         </div>
       </div>
       <div class="nav-item">
@@ -68,37 +69,233 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-8">Research</h1>
 
-      <div class="flex flex-wrap gap-2 mb-10 border-b border-slate-100 pb-4">
-        <button class="px-5 py-2 rounded-full bg-slate-900 text-white text-sm font-medium transition-colors">Publications</button>
-        <button class="px-5 py-2 rounded-full bg-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-900 text-sm font-medium transition-colors">international journals</button>
-        <button class="px-5 py-2 rounded-full bg-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-900 text-sm font-medium transition-colors">Patents</button>
+      <div class="flex flex-wrap gap-2 mb-10 border-b border-slate-100 pb-4" id="filter-buttons">
+        <button class="filter-btn px-5 py-2 rounded-full bg-slate-900 text-white text-sm font-medium transition-colors" data-filter="all">All</button>
+        <button class="filter-btn px-5 py-2 rounded-full bg-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-900 text-sm font-medium transition-colors" data-filter="publications">Publications</button>
+        <button class="filter-btn px-5 py-2 rounded-full bg-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-900 text-sm font-medium transition-colors" data-filter="journals">International Journals</button>
+        <button class="filter-btn px-5 py-2 rounded-full bg-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-900 text-sm font-medium transition-colors" data-filter="patents">Patents</button>
       </div>
 
-      <section class="research-list">
-        <div class="p-6 md:p-8 mb-6 rounded-2xl border border-slate-200 bg-white">
-          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
-            <span class="text-xs font-bold text-sky-600 uppercase tracking-widest">International Journal papers with impact factor</span>
-            <span class="text-xs font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">2014-2015 • In this college • 04/10/2014</span>
-          </div>
-          <p class="text-slate-700 leading-relaxed text-base md:text-lg max-w-4xl">A. R. Jayan and P. C. Pandey, Automated modification of consonant-vowel ratio of stops for improving speech intelligibility, Int. J. Speech Technol., vol. 18, pp. 113-130, 2015. Epub 2014 Oct., DOI: 10.1007/s10772-014-9254-4</p>
+      <!-- Research Content Container -->
+      <div class="mt-8 space-y-6 research-list">
+      
+        <!-- 1. Journal -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="journals">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">International Journal Papers with Impact Factor < 1.5</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2014 - 2015</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                A. R. Jayan and P. C. Pandey, "Automated modification of consonant-vowel ratio of stops for improving speech intelligibility," Int. J. Speech Technol., vol. 18, pp. 113-130, 2015. Epub 2014 Oct., DOI: 10.1007/s10772-014-9254-4
+            </p>
         </div>
-
-        <div class="p-6 md:p-8 mb-6 rounded-2xl border border-slate-200 bg-white">
-          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
-            <span class="text-xs font-bold text-sky-600 uppercase tracking-widest">International Conferences</span>
-            <span class="text-xs font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">2008-2009 • Outside this college • 19/04/2019</span>
-          </div>
-          <p class="text-slate-700 leading-relaxed text-base md:text-lg max-w-4xl">A. R. Jayan and P. C. Pandey, Detection of stop landmarks using Gaussian mixture modeling of speech spectrum, Proc. IEEE Int. Conf. Acoustics, Speech and Signal Processing 2009 (IEEE/ICASSP 2009), Taipei, Taiwan, pp. 4681-4684.</p>
+      
+        <!-- 2. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">International Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2008 - 2009</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                A. R. Jayan and P. C. Pandey, Detection of stop landmarks using Gaussian mixture modeling of speech spectrum, Proc. IEEE Int. Conf. Acoustics, Speech and Signal Processing 2009 (IEEE/ICASSP 2009), Taipei, Taiwan, pp. 4681-4684.
+            </p>
         </div>
-
-        <div class="p-6 md:p-8 mb-6 rounded-2xl border border-slate-200 bg-white">
-          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
-            <span class="text-xs font-bold text-sky-600 uppercase tracking-widest">International Conferences</span>
-            <span class="text-xs font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full w-max">2006-2007 • In this college • 02/09/2019</span>
-          </div>
-          <p class="text-slate-700 leading-relaxed text-base md:text-lg max-w-4xl">A. R. Jayan and P. C. Pandey, Detection of stop landmarks using Gaussian mixture modeling of speech spectrum, Proc. IEEE Int. Conf. Acoustics, Speech and Signal Processing 2009 (IEEE/ICASSP 2009), Taipei, Taiwan, pp. 4681-4684.</p>
+      
+        <!-- 3. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">International Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2006 - 2007</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                A. R. Jayan, P. C. Pandey, and P. K. Lehana, Time-scaling of consonant-vowel transitions using harmonic-plus-noise model for improving speech perception by listeners with moderate sensorineural impairment, Proc. 19th Int. Congress Acoustics 2007 (ICA 2007), Madrid, Spain, paper. no. CAS-03-006.
+            </p>
         </div>
-      </section>
+      
+        <!-- 4. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">National Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2011 - 2012</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                A. R. Jayan and P. C. Pandey, Automated CVR modification for improving perception of stop consonants, Proc. National Conference on Communications 2012 (NCC 2012), Kharagpur, India, pp. 698-702, paper no. 1569512651.
+            </p>
+        </div>
+      
+        <!-- 5. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">National Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2010 - 2011</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                A. R. Jayan, P. S. Rajath Bhat, and P. C. Pandey, Detection of burst onset landmarks in speech using rate of change of spectral moments, Proc. National Conference on Communications 2011 (NCC 2011), Bangalore, India, paper SpPrI.3.
+            </p>
+        </div>
+      
+        <!-- 6. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">International Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2007 - 2008</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                A. R. Jayan and P. C. Pandey, Automated detection of speech landmarks using Gaussian mixture modeling, Proc. Int. Symposium on Frontiers of Research on Speech and Music 2008 (FRSM 2008), Kolkata, India, pp. 323-327.
+            </p>
+        </div>
+      
+        <!-- 7. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">National Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2008 - 2009</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                A. R. Jayan, P. C. Pandey, and V. K. Pandey, Detection of acoustic landmarks with high resolution for speech processing, Proc. 14th National Conf. Communications 2008 (NCC 2008), Bombay, India, pp. 427-431.
+            </p>
+        </div>
+      
+        <!-- 8. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">International Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2007 - 2008</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                A. R. Jayan, P. C. Pandey, and P. K. Lehana, Automated detection of transition segments for intensity and time-Scale modification for speech intelligibility enhancement, Proc. IEEE Int. Conf. Signal Processing, Communications, Networking 2008 (ICSCN 2008), Chennai, India, pp. 69-74.
+            </p>
+        </div>
+      
+        <!-- 9. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">International Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2013 - 2014</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                Devis Thomas, and Jayan, A.R. (2014). “Automated Suppression of Howling Noise Using Sinusoidal Model Based Analysis/Synthesis,” Proc. IACCC 2014, Gurgaon, India.
+            </p>
+        </div>
+      
+        <!-- 10. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">International Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2013 - 2014</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                Devis Thomas, and Jayan, A.R. (2014). “Real-time Suppression of Howling Noise in Public Address Systems”, Proc. ICSSP 2014, Kollam, India.
+            </p>
+        </div>
+      
+        <!-- 11. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">International Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2013 - 2014</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                Rohit, P., and Jayan, A.R. (2014). “Speech Enhancement by Time-Scale Expansion and Emphasis of Low Energy Segments,” Proc. ICSSP 2014, Kollam, India.
+            </p>
+        </div>
+      
+        <!-- 12. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">National Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2013 - 2014</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                Rohit, P., and Jayan, A.R., (2014). “Speech Enhancement using Sinusoidal Model Based Analysis/Synthesis,” Proc. NATCON 2014, Wayanad, India
+            </p>
+        </div>
+      
+        <!-- 13. Patent -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="patents">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">Patents</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2018 - 2019</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                Method and System for Consonant-Vowel Ratio modification for improving speech perception
+            </p>
+        </div>
+      
+        <!-- 14. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">International Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2016 - 2017</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                Effect of CVR modification on automatic recognition of stop consonants in isolated VCV utterances by an HMM based ASR system
+            </p>
+        </div>
+      
+        <!-- 15. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">International Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2015 - 2016</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                Speech intelligibility enhancement on android platform by consonant-vowel-ratio modification
+            </p>
+        </div>
+      
+        <!-- 16. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">International Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2015 - 2016</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                An offline signal processing technique for accurate localisation of stop release bursts in vowel-consonant-vowel utterances
+            </p>
+        </div>
+      
+        <!-- 17. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">International Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2015 - 2016</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                Segment specific enhancement of speech characteristics for improving speech intelligibility under adverse listening conditions
+            </p>
+        </div>
+      
+        <!-- 18. Publication -->
+        <div class="filter-item bg-white border border-slate-200 shadow-sm rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow" data-category="publications">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">International Conferences</span>
+                <span class="text-xs font-semibold text-slate-500 mt-2 sm:mt-0">2018</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Dr. Jayan A R</h3>
+            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                George Abraham, Prigish & M S, Sinith & R. Jayan, A. (2018). Cumulative Impulse Strength Based Epoch Extraction from Singing Voice: 10th International Conference, IHCI 2018, Allahabad, India, December 7–9, 2018, Proceedings. 10.1007/978-3-030-04021-5_9.
+            </p>
+        </div>
+      
+      </div>
     </div>
   </main>
 
@@ -132,5 +329,35 @@
         <div class="copyright">© 2026 - All rights reserved. Department of Electronics and Communication Engineering || Website Credits</div>
   </footer>
   <script src="assets/js/nav.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const buttons = document.querySelectorAll(".filter-btn");
+      const items = document.querySelectorAll(".filter-item");
+
+      buttons.forEach(button => {
+        button.addEventListener("click", () => {
+          // Remove active styles from all buttons
+          buttons.forEach(btn => {
+            btn.classList.remove("bg-slate-900", "text-white");
+            btn.classList.add("bg-transparent", "text-slate-500");
+          });
+          
+          // Add active styles to clicked button
+          button.classList.remove("bg-transparent", "text-slate-500");
+          button.classList.add("bg-slate-900", "text-white");
+
+          const filterValue = button.getAttribute("data-filter");
+
+          items.forEach(item => {
+            if (filterValue === "all" || item.getAttribute("data-category") === filterValue) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>

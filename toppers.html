@@ -51,6 +51,7 @@
           <a href="projects.html" class="block px-4 py-2 uppercase tracking-wider text-xs font-bold text-slate-600 hover:text-sky-600 hover:bg-slate-50 transition-colors">Projects</a>
           <a href="research.html" class="block px-4 py-2 uppercase tracking-wider text-xs font-bold text-slate-600 hover:text-sky-600 hover:bg-slate-50 transition-colors">Research</a>
           <a href="achievements.html" class="block px-4 py-2 uppercase tracking-wider text-xs font-bold text-slate-600 hover:text-sky-600 hover:bg-slate-50 transition-colors">Achievements</a>
+          <a href="magazine.html" class="block px-4 py-2 uppercase tracking-wider text-xs font-bold text-slate-600 hover:text-sky-600 hover:bg-slate-50 transition-colors">Magazines & Newsletters</a>
         </div>
       </div>
       <div class="nav-item">
@@ -67,11 +68,11 @@
   </header>
 
     <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-4 py-12 md:py-16 min-h-screen">
+    <main class="max-w-6xl mx-auto px-4 pt-32 md:pt-40 pb-12 md:pb-16 min-h-screen">
         
-        <div class="mb-10 text-center">
+        <div class="mb-10">
             <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Academic Toppers</h1>
-            <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">Celebrating the academic excellence and outstanding performance of our students.</p>
+            <p class="text-slate-600 text-base md:text-lg max-w-2xl">Celebrating the academic excellence and outstanding performance of our students.</p>
         </div>
 
         <!-- Academic Toppers UI -->
@@ -133,6 +134,16 @@
             header: true,
             complete: function(results) {
                 const data = results.data.filter(item => item.Batch && item.Semester && item['Poster Image Link']);
+                
+                const hardcodedData2026 = [
+                    { CustomLabel: "2026 year toper lists", "Poster Image Link": "assets/topers 2026/overall topers 2022-2026.jpeg" },
+                    { CustomLabel: "2026 year toper lists", "Poster Image Link": "assets/topers 2026/s8 examination.jpeg" },
+                    { CustomLabel: "2026 year toper lists", "Poster Image Link": "assets/topers 2026/s6 examination.jpeg" },
+                    { CustomLabel: "2026 year toper lists", "Poster Image Link": "assets/topers 2026/s4 examinaton.jpeg" },
+                    { CustomLabel: "2026 year toper lists", "Poster Image Link": "assets/topers 2026/s2 examination.jpeg" }
+                ];
+                data.unshift(...hardcodedData2026);
+
                 const select = document.getElementById('topper-filter');
                 const grid = document.getElementById('topper-grid');
 
@@ -142,11 +153,12 @@
                     return;
                 }
 
-                const uniqueOptions = [...new Set(data.map(item => `${item.Batch} - ${item.Semester}`))];
+                const getLabel = item => item.CustomLabel || `${item.Batch} - ${item.Semester}`;
+                const uniqueOptions = [...new Set(data.map(getLabel))];
                 select.innerHTML = uniqueOptions.map(opt => `<option value="${opt}">${opt}</option>`).join('');
 
                 function renderPosters(selectedValue) {
-                    const filteredData = data.filter(item => `${item.Batch} - ${item.Semester}` === selectedValue);
+                    const filteredData = data.filter(item => getLabel(item) === selectedValue);
                     
                     if (filteredData.length === 0) {
                         grid.innerHTML = '<p class="text-slate-500 text-center italic col-span-full py-12">No topper posters uploaded for this selection yet.</p>';
@@ -155,7 +167,7 @@
 
                     grid.innerHTML = filteredData.map(item => `
                         <div class="rounded-xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl transition-shadow duration-300 bg-slate-50">
-                            <img src="${item['Poster Image Link']}" alt="${selectedValue} Toppers" class="w-full h-auto object-cover" loading="lazy">
+                            <img src="${item['Poster Image Link']}" alt="${selectedValue}" class="w-full h-auto object-cover" loading="lazy">
                         </div>
                     `).join('');
                 }
